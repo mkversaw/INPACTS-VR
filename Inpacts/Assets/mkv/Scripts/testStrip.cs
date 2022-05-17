@@ -6,6 +6,7 @@ public class testStrip : MonoBehaviour
 {
     [SerializeField] private GameObject bloodRef;
     //[SerializeField] private GameObject bloodCollider;
+    [SerializeField] private GameObject textRef;
 
     bool touchedBlood = false;
     private void OnCollisionEnter(Collision collision)
@@ -13,6 +14,7 @@ public class testStrip : MonoBehaviour
         if (collision.gameObject == bloodRef)
         {
             Destroy(bloodRef);
+            textRef.SetActive(true);
             touchedBlood = true;
         }
     }

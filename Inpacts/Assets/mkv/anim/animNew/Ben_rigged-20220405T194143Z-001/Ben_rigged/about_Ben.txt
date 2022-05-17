@@ -1,0 +1,10 @@
+Main: Rig is standard biped with 'skin'modifier. A rotatable bone for lower jaw is added 'bone_jaw' 
+
+Eyes: Linked to 'head' biped part and have 'look at' controller. Move'look_at' spline and the eyes will follow.
+
+Tongue: Has a few Point helpers to manipulate - tongueCONTROL_Point02, tongueCONTROL_Point03 etc.
+Use 'assume skin pose' command from animation menu to reset transformations.
+
+
+To optimyze hair make hairs thicker and fewer in count.
+
