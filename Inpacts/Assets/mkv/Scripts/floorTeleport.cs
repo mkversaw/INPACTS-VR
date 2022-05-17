@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class floorTeleport : MonoBehaviour
 {
-    public GameObject floor;
     public GameObject[] objects;
     private Vector3[] startPositions;
 
@@ -20,10 +19,10 @@ public class floorTeleport : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) // MAKE SURE THE COLLIDER IS SET TO "TRIGGER"!
     {
-        print("trigger entered by: " + other.gameObject.name);
+        //print("trigger entered by: " + other.gameObject.name);
         for (int i = 0; i < objects.Length; i++)
         {
-            print(objects[i].gameObject.name);
+            //print(objects[i].gameObject.name);
             if(other.gameObject.name == objects[i].name)
             {
                 print("found match w/: " + objects[i].name);

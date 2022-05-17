@@ -18,8 +18,10 @@ public class controlSlides : MonoBehaviour
 
     private bool canMoveOn = true; // whether the user still needs to complete some action before going to next slide
 
-    private bool hasGloves = false;
-    private bool snappedToMonitor = false; // if test strip is in monitor
+    private bool hasGloves = false; // is user wearing gloves?
+    private bool stripInMonitor = false; // is glucose test strip in the monitor?
+    private bool stripTouchedBlood = false; // has the strip touched the blood?
+
     void Start()
     {
         //managerRef.GetComponent<highlight>().highlightObj(testObj);
@@ -113,6 +115,21 @@ public class controlSlides : MonoBehaviour
                 slides[currSlide].SetActive(true); // make the next slide active
             }
         }
+    }
+
+    public void setGlove()
+    {
+        hasGloves = true;
+    }
+
+    public void setStrip()
+    {
+        stripInMonitor = true;
+    }
+
+    public void setStripBlood()
+    {
+        stripTouchedBlood = true;
     }
 }
 

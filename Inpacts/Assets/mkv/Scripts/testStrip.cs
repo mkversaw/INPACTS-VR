@@ -16,6 +16,7 @@ public class testStrip : MonoBehaviour
             Destroy(bloodRef);
             textRef.SetActive(true);
             touchedBlood = true;
+            GameObject.FindGameObjectWithTag("Manager").GetComponent<controlSlides>().setStripBlood(); // update status in manager
         }
     }
 }
