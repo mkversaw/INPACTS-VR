@@ -11,12 +11,12 @@ public class testStrip : MonoBehaviour
     bool touchedBlood = false;
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject == bloodRef)
+        if (collision.gameObject == bloodRef && !touchedBlood)
         {
             Destroy(bloodRef);
             textRef.SetActive(true);
             touchedBlood = true;
-            GameObject.FindGameObjectWithTag("Manager").GetComponent<controlSlides>().setStripBlood(); // update status in manager
+            GameObject.FindGameObjectWithTag("Manager").GetComponent<controlSlides>().enableNext(); // update status in manager
         }
     }
 }

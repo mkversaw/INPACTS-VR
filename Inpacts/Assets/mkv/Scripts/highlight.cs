@@ -32,17 +32,8 @@ public class highlight : MonoBehaviour
 		foreach (Renderer r in components) // iterate through those materials
 		{
 
-			
-			//Material temp = c.GetComponent<Renderer>().material;
 			matQ.Enqueue(r.material);
 			r.material = highlightMat;
-			//if(c.TryGetComponent(out Material mat))
-			//{
-			//	print(c.name);
-			//	matQ.Enqueue(mat); // enqueue the ORIGINAL material
-			//	c.GetComponent<Renderer>().material = highlightMat; // change the material to the highlighted version
-			//	print("bingus");
-			//}
 
 		}
 	}
