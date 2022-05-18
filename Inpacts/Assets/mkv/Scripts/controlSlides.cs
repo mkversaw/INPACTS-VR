@@ -5,18 +5,20 @@ using UnityEngine.UI;
 
 public class controlSlides : MonoBehaviour
 {
+    [SerializeField] private bool debugMode = false;
 
-    [SerializeField] List<GameObject> slides;
-    [SerializeField] bool loopSlides;
-    [SerializeField] GameObject managerRef;
-    [SerializeField] GameObject gloveBoxRef;
-    [SerializeField] GameObject glucometerRef;
-    [SerializeField] GameObject testStripRef;
-    [SerializeField] GameObject lancetRef;
+    [SerializeField] private List<GameObject> slides;
+    [SerializeField] private bool loopSlides;
+    [SerializeField] private GameObject animControlRef;
+    [SerializeField] private GameObject managerRef;
+    [SerializeField] private GameObject gloveBoxRef;
+    [SerializeField] private GameObject glucometerRef;
+    [SerializeField] private GameObject testStripRef;
+    [SerializeField] private GameObject lancetRef;
 
 
-    [SerializeField] Button nextRef;
-    [SerializeField] Button playExampleRef;
+    [SerializeField] private Button nextRef;
+    [SerializeField] private Button playExampleRef;
 
     public int currSlide = 0;
 
@@ -47,7 +49,7 @@ public class controlSlides : MonoBehaviour
                 }
             } else if (!lancetTouched)
             {
-                if(lancetRef.GetComponent<highlight2>().isHighlighted) // has the lancet been prepped?
+                if(lancetRef.GetComponent<wasGrabbed>().grabbed) // has the lancet been prepped?
                 {
                     lancetTouched = true;
                     enableNext();
@@ -75,6 +77,10 @@ public class controlSlides : MonoBehaviour
 
     public void disableNext()
     {
+        if(debugMode)
+        {
+            return;
+        }
         nextRef.interactable = false; // gray the button out
         canMoveOn = false;
     }
@@ -138,7 +144,7 @@ public class controlSlides : MonoBehaviour
 
                 //playExampleRef.gameObject.SetActive(true); // enable example for voiceline of asking patient to position their hand
 
-                // play animation of arm extend
+                animControlRef.GetComponent<patient2>().playArmRaise(); // play animation of arm extend
 
                 break;
 

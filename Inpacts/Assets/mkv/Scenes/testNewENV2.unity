@@ -1217,7 +1217,7 @@ PrefabInstance:
     - target: {fileID: 7351752983508716689, guid: 16da134961d43db4fba25a2c00adc719,
         type: 3}
       propertyPath: m_RootOrder
-      value: 25
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 7351752983508716689, guid: 16da134961d43db4fba25a2c00adc719,
         type: 3}
@@ -1422,8 +1422,6 @@ GameObject:
   m_Component:
   - component: {fileID: 329673888}
   - component: {fileID: 329673889}
-  - component: {fileID: 329673890}
-  - component: {fileID: 329673891}
   - component: {fileID: 329673892}
   - component: {fileID: 329673893}
   - component: {fileID: 329673894}
@@ -1461,33 +1459,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   centerEyeCameraTransform: {fileID: 1179729781}
---- !u!114 &329673890
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 329673887}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fd8a0cc1e2b4bf40b0a79cff5717035, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animControlRef: {fileID: 680442122}
---- !u!114 &329673891
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 329673887}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b02b386fcb983af4ebeca2e7bb77c56d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  components: []
-  highlightMat: {fileID: 2100000, guid: c57a7f265b9283c49b18a3793fb3a3d0, type: 2}
 --- !u!114 &329673892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1500,6 +1471,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 973ecfa3cfb51454188279eff0c0c512, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugMode: 0
   slides:
   - {fileID: 1599370572}
   - {fileID: 641019704}
@@ -1511,12 +1483,16 @@ MonoBehaviour:
   - {fileID: 1513220691}
   - {fileID: 1473708642}
   - {fileID: 1903963858}
-  loopSlides: 1
+  loopSlides: 0
+  animControlRef: {fileID: 680442122}
   managerRef: {fileID: 329673887}
   gloveBoxRef: {fileID: 2049334354778818427}
-  testObj2: {fileID: 7765550856357087516}
-  nextRef: {fileID: 0}
+  glucometerRef: {fileID: 994079970}
+  testStripRef: {fileID: 2896211525543690075}
+  lancetRef: {fileID: 7126153759685853382}
+  nextRef: {fileID: 1849931897}
   playExampleRef: {fileID: 330935703}
+  currSlide: 0
 --- !u!114 &329673893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2573,13 +2549,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 973ecfa3cfb51454188279eff0c0c512, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugMode: 0
   slides: []
   loopSlides: 0
+  animControlRef: {fileID: 0}
   managerRef: {fileID: 329673887}
   gloveBoxRef: {fileID: 0}
-  testObj2: {fileID: 7765550856357087516}
+  glucometerRef: {fileID: 0}
+  testStripRef: {fileID: 0}
+  lancetRef: {fileID: 0}
   nextRef: {fileID: 0}
   playExampleRef: {fileID: 0}
+  currSlide: 0
 --- !u!65 &641611206
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2654,7 +2635,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &670805228
 GameObject:
@@ -3188,12 +3169,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 762968052}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
   m_LocalPosition: {x: 1.23, y: 10.74, z: -3.39}
   m_LocalScale: {x: 24.424225, y: 20.200699, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_Father: {fileID: 543450652322878337}
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &817128458 stripped
 MonoBehaviour:
@@ -4180,7 +4161,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1279775436
 MonoBehaviour:
@@ -4390,36 +4371,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.07201018, y: 0.0037932966, z: 0.03500001}
   m_Center: {x: 0, y: 0.034603294, z: 0}
---- !u!114 &1377154162
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2920551683634579098}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ffc133322d1e65408f89e12b2415975, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  handLeft: {fileID: 557100759}
-  handRight: {fileID: 530523005}
-  leftCollider: {fileID: 1936170339}
-  rightCollider: {fileID: 1936170338}
-  gloveTex: {fileID: 2800000, guid: a702f7ab618e81e44af147e128bf4de5, type: 3}
---- !u!65 &1377154163
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2920551683634579098}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.01523969, y: 0.00621299, z: 0.0071698013}
-  m_Center: {x: 0.00001328843, y: 0.0031053445, z: 5.6104728e-14}
 --- !u!64 &1377154164
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4743,7 +4694,7 @@ RectTransform:
   - {fileID: 1473708643}
   - {fileID: 1903963859}
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5062,7 +5013,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1599370573
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5296,7 +5247,7 @@ PrefabInstance:
     - target: {fileID: 5974256388897832358, guid: 8406c4f7f27ad924cb8c3601faaf60d4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 26
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 5974256388897832358, guid: 8406c4f7f27ad924cb8c3601faaf60d4,
         type: 3}
@@ -8054,6 +8005,7 @@ Transform:
   - {fileID: 7510569333413638411}
   - {fileID: 6959007769587249294}
   - {fileID: 1607087008}
+  - {fileID: 762968056}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9892,6 +9844,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6330963725895891000}
   - component: {fileID: 2049334354778818428}
+  - component: {fileID: 2049334354778818430}
+  - component: {fileID: 2049334354778818429}
   m_Layer: 0
   m_Name: gloveBox
   m_TagString: Untagged
@@ -9913,6 +9867,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightMat: {fileID: 2100000, guid: c57a7f265b9283c49b18a3793fb3a3d0, type: 2}
   isHighlighted: 0
+--- !u!114 &2049334354778818429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2049334354778818427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ffc133322d1e65408f89e12b2415975, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handLeft: {fileID: 557100759}
+  handRight: {fileID: 530523005}
+  leftCollider: {fileID: 1936170339}
+  rightCollider: {fileID: 1936170338}
+  gloveTex: {fileID: 2800000, guid: a702f7ab618e81e44af147e128bf4de5, type: 3}
+--- !u!65 &2049334354778818430
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2049334354778818427}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01523969, y: 0.00621299, z: 0.0071698013}
+  m_Center: {x: 0.00001328843, y: 0.0031053445, z: 5.6104728e-14}
 --- !u!1 &2053650132745702192
 GameObject:
   m_ObjectHideFlags: 0
@@ -11381,7 +11365,7 @@ GameObject:
   - component: {fileID: 2896211525543690083}
   - component: {fileID: 2896211525543690082}
   m_Layer: 0
-  m_Name: Strip
+  m_Name: Test strip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11531,8 +11515,6 @@ GameObject:
   - component: {fileID: 4657412524501845021}
   - component: {fileID: 6480222422834046696}
   - component: {fileID: 2809464416547901611}
-  - component: {fileID: 1377154163}
-  - component: {fileID: 1377154162}
   m_Layer: 0
   m_Name: gloveBox_GEO_high
   m_TagString: Untagged
@@ -18330,7 +18312,7 @@ PrefabInstance:
     - target: {fileID: 697358927922838665, guid: 373b7d366307b73438b0b82bb69ead85,
         type: 3}
       propertyPath: m_RootOrder
-      value: 22
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 697358927922838665, guid: 373b7d366307b73438b0b82bb69ead85,
         type: 3}

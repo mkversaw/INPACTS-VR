@@ -7,16 +7,18 @@ ScriptsOnlyBuild:
     - OculusSampleFramework.DistanceGrabber
     - adjustHeight
     - controlSlides
+    - controlSound
     - createBlood
+    - debug
     - floorTeleport
     - gloveBox
-    - highlight
+    - highlight2
     - patient
     - patient2
-    - playAnimations
     - snapToLocation
     - snappable
     - testStrip
+    - wasGrabbed
     Oculus.Spatializer.dll:
     - ONSPSettings
     Oculus.VR.Editor.dll:
@@ -58,8 +60,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -105,6 +109,8 @@ ScriptsOnlyBuild:
     - Class: 74
       Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
       Script: {instanceID: 0}
     - Class: 83
       Script: {instanceID: 0}
@@ -179,8 +185,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4142}
     - Class: 114
-      Script: {instanceID: 4316}
-    - Class: 114
       Script: {instanceID: 4390}
     - Class: 114
       Script: {instanceID: 4424}
@@ -203,8 +207,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5710}
     - Class: 114
-      Script: {instanceID: 5814}
-    - Class: 114
       Script: {instanceID: 5892}
     - Class: 114
       Script: {instanceID: 5972}
@@ -216,6 +218,14 @@ ScriptsOnlyBuild:
       Script: {instanceID: 6488}
     - Class: 114
       Script: {instanceID: 6712}
+    - Class: 114
+      Script: {instanceID: 35584}
+    - Class: 114
+      Script: {instanceID: 48312}
+    - Class: 114
+      Script: {instanceID: 106128}
+    - Class: 114
+      Script: {instanceID: 106156}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -687,7 +697,7 @@ ScriptsOnlyBuild:
     className: AppDeeplinkUI
   - hash:
       serializedVersion: 2
-      Hash: 5c3626805080abb88ac850f4e1d559f2
+      Hash: 91252cccfc9d722d2f1d7d8935631f7a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: controlSlides
@@ -2067,7 +2077,7 @@ ScriptsOnlyBuild:
     className: XRReferenceImageLibrary
   - hash:
       serializedVersion: 2
-      Hash: ef8ff1862a57e42b722a5fddb79e13bc
+      Hash: 93376649573e562d06247140da7ea9a8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: floorTeleport
@@ -2353,7 +2363,31 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: OculusSampleFramework
     className: TrackSegment
+  - hash:
+      serializedVersion: 2
+      Hash: 58d9b4d2c6f6e900c11cb5d8ddb6114d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: debug
+  - hash:
+      serializedVersion: 2
+      Hash: 1c71189af1ae817f06cb9c17f6c26325
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: controlSound
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: wasGrabbed
+  - hash:
+      serializedVersion: 2
+      Hash: f21db0d48d6686f71d7f9d14c794af09
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: highlight2
   platform: 13
   scenePathNames:
   - Assets/mkv/Scenes/testNewENV2.unity
-  playerPath: C:/Users/Miles/Desktop/platform-tools_r33.0.1-windows/platform-tools/inpactsBuild.apk
+  playerPath: C:/Users/Miles/Desktop/platform-tools_r33.0.1-windows/platform-tools/inpactsBuild_5-17.apk
