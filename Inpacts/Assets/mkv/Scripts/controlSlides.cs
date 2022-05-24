@@ -16,6 +16,7 @@ public class controlSlides : MonoBehaviour
     [SerializeField] private GameObject testStripRef;
     [SerializeField] private GameObject lancetRef;
 
+    
 
     [SerializeField] private Button nextRef;
     [SerializeField] private Button playExampleRef;
