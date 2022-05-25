@@ -15,40 +15,43 @@ public class patient2 : MonoBehaviour
 
     void Update()
     {
-        //if (Input.GetKeyDown("i"))
-        //{ // idle
-        //    print("playing idle animation");
-        //    anim.SetBool("isIdle", true);
-        //    anim.SetTrigger("playIdle");
-        //}
-        //else if (Input.GetKeyDown("a"))
-        //{ // arm
-        //    print("playing raise arm animation");
-        //    anim.SetBool("isExtended", true);
-        //    anim.SetTrigger("playArm");
-        //    anim.SetBool("isIdle", false);
-        //}
-        //else if (Input.GetKeyDown("n"))
-        //{ // nod
-        //    print("playing cotton grab");
-        //    anim.SetTrigger("playCottonBall");
-        //    anim.SetBool("isIdle", false);
-        //} else if (Input.GetKeyDown("l"))
-        //{
-        //    print("playing finger prick, arm must be extended for this to work");
-        //    if(anim.GetBool("isExtended"))
-        //    {
-        //        anim.SetTrigger("playPrick");
-        //        anim.SetBool("isIdle", false);
-        //    } else
-        //    {
-        //        print("arm was not already extended!");
-        //    }
-        //}
-        //else if (Input.GetKeyDown("k"))
-        //{
-        //    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        //}
+        if (Input.GetKeyDown("i"))
+        { // idle
+            print("playing idle animation");
+            anim.SetBool("isIdle", true);
+            anim.SetTrigger("playIdle");
+        }
+        else if (Input.GetKeyDown("a"))
+        { // arm
+            print("playing raise arm animation");
+            anim.ResetTrigger("playIdle");
+            anim.SetBool("isExtended", true);
+            anim.SetTrigger("playArm");
+            anim.SetBool("isIdle", false);
+        }
+        else if (Input.GetKeyDown("n"))
+        { // nod
+            print("playing cotton grab");
+            anim.SetTrigger("playCottonBall");
+            anim.SetBool("isIdle", false);
+        } else if (Input.GetKeyDown("l"))
+        {
+            anim.ResetTrigger("playArm");
+            print("playing finger prick, arm must be extended for this to work");
+            if (anim.GetBool("isExtended"))
+            {
+                anim.SetTrigger("playPrick");
+                anim.SetBool("isIdle", false);
+            }
+            else
+            {
+                print("arm was not already extended!");
+            }
+        }
+        else if (Input.GetKeyDown("k"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 
     public void playIdle()

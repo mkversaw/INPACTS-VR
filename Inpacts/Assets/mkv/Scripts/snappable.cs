@@ -8,6 +8,8 @@ public class snappable : MonoBehaviour
     public GameObject snapLocation;
     public GameObject snapParent;
     public bool isSnapped;
+    private bool wasEverSnapped = true;
+    private bool first = true;
     public bool immovableOnceSnapped;
     private bool objectSnapped;
     private bool grabbed;
@@ -25,6 +27,14 @@ public class snappable : MonoBehaviour
             GetComponent<Rigidbody>().isKinematic = true;
             transform.SetParent(snapParent.transform);
             isSnapped = true;
+            wasEverSnapped = true;
+        }
+
+        if(wasEverSnapped && !objectSnapped && first)
+        {
+            print("bazinga");
+            transform.parent = null;
+            //GetComponent<Rigidbody>().isKinematic = false;
         }
 
         // ensure that object is still able to be grabbed by OVRGrabber script
@@ -32,6 +42,7 @@ public class snappable : MonoBehaviour
         {
             if (!objectSnapped && !grabbed)
             {
+                print("TEST!!!!!!!!!!");
                 GetComponent<Rigidbody>().isKinematic = false;
             }
         }

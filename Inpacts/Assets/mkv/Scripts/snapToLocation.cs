@@ -30,6 +30,7 @@ public class snapToLocation : MonoBehaviour
         {
             print(other.gameObject.name + " left the snap zone!");
             insideSnapZone = false;
+            isSnapped = false;
         }
     }
 
