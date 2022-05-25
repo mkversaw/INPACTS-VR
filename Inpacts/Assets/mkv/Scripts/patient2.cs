@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class patient2 : MonoBehaviour
 {
     Animator anim;
+    [SerializeField] private Animator cottonBallAnim;
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -17,36 +18,28 @@ public class patient2 : MonoBehaviour
     {
         if (Input.GetKeyDown("i"))
         { // idle
-            print("playing idle animation");
-            anim.SetBool("isIdle", true);
-            anim.SetTrigger("playIdle");
+            playIdle();
         }
         else if (Input.GetKeyDown("a"))
         { // arm
-            print("playing raise arm animation");
-            anim.ResetTrigger("playIdle");
-            anim.SetBool("isExtended", true);
-            anim.SetTrigger("playArm");
-            anim.SetBool("isIdle", false);
+            playArmRaise();
         }
         else if (Input.GetKeyDown("n"))
-        { // nod
-            print("playing cotton grab");
-            anim.SetTrigger("playCottonBall");
-            anim.SetBool("isIdle", false);
+        {
+            playCottonBall();
         } else if (Input.GetKeyDown("l"))
         {
-            anim.ResetTrigger("playArm");
-            print("playing finger prick, arm must be extended for this to work");
-            if (anim.GetBool("isExtended"))
-            {
-                anim.SetTrigger("playPrick");
-                anim.SetBool("isIdle", false);
-            }
-            else
-            {
-                print("arm was not already extended!");
-            }
+            //anim.ResetTrigger("playArm");
+            //print("playing finger prick, arm must be extended for this to work");
+            //if (anim.GetBool("isExtended"))
+            //{
+            //    anim.SetTrigger("playPrick");
+            //    anim.SetBool("isIdle", false);
+            //}
+            //else
+            //{
+            //    print("arm was not already extended!");
+            //}
         }
         else if (Input.GetKeyDown("k"))
         {
@@ -73,7 +66,13 @@ public class patient2 : MonoBehaviour
     public void playCottonBall()
     {
         print("playing cotton grab");
+
+        //anim.ResetTrigger("playIdle");
+        anim.ResetTrigger("playArm");
+
         anim.SetTrigger("playCottonBall");
+        cottonBallAnim.SetTrigger("playCottonBall"); // have cotton ball move with it
+
         anim.SetBool("isIdle", false);
     }
 

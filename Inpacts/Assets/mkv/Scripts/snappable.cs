@@ -32,7 +32,6 @@ public class snappable : MonoBehaviour
 
         if(wasEverSnapped && !objectSnapped && first)
         {
-            print("bazinga");
             transform.parent = null;
             //GetComponent<Rigidbody>().isKinematic = false;
         }
@@ -42,7 +41,6 @@ public class snappable : MonoBehaviour
         {
             if (!objectSnapped && !grabbed)
             {
-                print("TEST!!!!!!!!!!");
                 GetComponent<Rigidbody>().isKinematic = false;
             }
         }

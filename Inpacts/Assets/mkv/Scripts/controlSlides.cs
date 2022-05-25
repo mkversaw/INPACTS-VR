@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class controlSlides : MonoBehaviour
 {
     [SerializeField] private bool debugMode = false;
+    [SerializeField] private bool disableWater = false; // save time when testing :)
 
     [SerializeField] private List<GameObject> slides;
     [SerializeField] private bool loopSlides;
@@ -15,8 +16,12 @@ public class controlSlides : MonoBehaviour
     [SerializeField] private GameObject glucometerRef;
     [SerializeField] private GameObject testStripRef;
     [SerializeField] private GameObject lancetRef;
+    [SerializeField] private GameObject prickSiteRef;
+    [SerializeField] private GameObject sharpsBinRef;
 
     
+    
+
 
     [SerializeField] private Button nextRef;
     [SerializeField] private Button playExampleRef;
@@ -29,10 +34,11 @@ public class controlSlides : MonoBehaviour
     [System.NonSerialized] public bool stripInMonitor = false; // is glucose test strip in the monitor?
     [System.NonSerialized] public bool stripTouchedBlood = false; // has the strip touched the blood?
     [System.NonSerialized] public bool lancetTouched = false; // has the lancet been prepped?
+    [System.NonSerialized] public bool pricked = false; // has the patient been pricked?
 
     void Start()
     {
-        GameObject.Find("CenterEyeAnchor").GetComponent<OVRScreenFade>().FadeIn();
+        GameObject.Find("CenterEyeAnchor").GetComponent<OVRScreenFade>().FadeIn(); // start scene with a fade in effect
         slides[currSlide].SetActive(true); // enable the first slide
         slideEvent(currSlide);
     }
@@ -109,9 +115,10 @@ public class controlSlides : MonoBehaviour
 
             case 5: // washing hands
 
-                
-                StartCoroutine(Water(5.0f,3.0f)); // fade and play water SFX
-
+                if (!disableWater)
+                {
+                    StartCoroutine(Water(5.0f, 3.0f)); // fade and play water SFX
+                }
 
                 gloveBoxRef.GetComponent<highlight2>().highlightObj(); // highlight the glovebox
                 disableNext(); // cant move on until task is done
@@ -125,7 +132,10 @@ public class controlSlides : MonoBehaviour
 
             case 7: // patient washes their hands
 
-                StartCoroutine(Water(5.0f, 3.0f)); // fade and play water SFX
+                if (!disableWater)
+                {
+                    StartCoroutine(Water(5.0f, 3.0f)); // fade and play water SFX
+                }
 
                 glucometerRef.GetComponent<highlight2>().highlightObj(); // highlight test strip and monitor
                 testStripRef.GetComponent<highlight2>().highlightObj(); // highlight test strip and monitor
@@ -146,11 +156,35 @@ public class controlSlides : MonoBehaviour
                 //playExampleRef.gameObject.SetActive(true); // enable example for voiceline of asking patient to position their hand
 
                 animControlRef.GetComponent<patient2>().playArmRaise(); // play animation of arm extend
+                prickSiteRef.SetActive(true);
+                disableNext(); // cant move on until task is done
 
                 break;
 
             case 10: // prick finger
 
+
+                disableNext(); // cant move on until task is done
+
+                break;
+
+            case 11:
+
+                animControlRef.GetComponent<patient2>().playCottonBall(); // play animation of grabbing cotton ball
+                
+                sharpsBinRef.GetComponent<sharpsBin>().canDelete = true; // let sharps bin delete lancet
+
+                break;
+
+            case 12:
+
+                break;
+
+            case 13:
+
+                break;
+
+            case 14:
 
                 break;
 

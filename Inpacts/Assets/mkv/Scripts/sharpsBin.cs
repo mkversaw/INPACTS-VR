@@ -10,7 +10,12 @@ public class sharpsBin : MonoBehaviour
     {
         if(collision.gameObject == lanceRef && canDelete)
         {
-            Destroy(lanceRef);
+            //if (!lanceRef.GetComponent<OVRGrabbable>().isGrabbed)
+            //{
+            //    //Destroy(lanceRef); FIX THIS
+            //    lanceRef.SetActive(false);
+            //}
+            lanceRef.SetActive(false);
         }
     }
 }
