@@ -8,8 +8,6 @@ public class snappable : MonoBehaviour
     public GameObject snapLocation;
     public GameObject snapParent;
     public bool isSnapped;
-    private bool wasEverSnapped = true;
-    private bool first = true;
     public bool immovableOnceSnapped;
     private bool objectSnapped;
     private bool grabbed;
@@ -24,25 +22,58 @@ public class snappable : MonoBehaviour
         // make snapped object a child of the obj its snapped to
         if(objectSnapped)
         {
+
+
             GetComponent<Rigidbody>().isKinematic = true;
             transform.SetParent(snapParent.transform);
             isSnapped = true;
-            wasEverSnapped = true;
+            
+            if(!grabbed)
+            {
+                if (name == "Test strip")
+                {
+                    print("test");
+                    snapLocation.GetComponent<snapToLocation>().instantSnap = false;
+                }
+            }
         }
 
-        if(wasEverSnapped && !objectSnapped && first)
+
+
+        if(!objectSnapped)
         {
-            transform.parent = null;
+            //transform.parent = null;
             //GetComponent<Rigidbody>().isKinematic = false;
         }
 
         // ensure that object is still able to be grabbed by OVRGrabber script
         if (!immovableOnceSnapped)
         {
+            if(grabbed)
+            {
+                
+                
+                //if(transform.parent != null)
+                //{
+                //    print(transform.parent);
+                //    if (transform.parent.gameObject.layer != LayerMask.NameToLayer("Hands"))
+                //    {
+                //        GetComponent<Rigidbody>().isKinematic = false;
+                //        //transform.parent = null;
+                //    } else
+                //    {
+                //        print("?????");
+                //    }
+                //    
+                //}
+
+
+            }
+
+
             if (!objectSnapped && !grabbed)
             {
-                print("test");
-                GetComponent<Rigidbody>().isKinematic = false;
+                //GetComponent<Rigidbody>().isKinematic = false;
             }
         }
     }

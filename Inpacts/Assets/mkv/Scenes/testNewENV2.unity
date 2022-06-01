@@ -7452,7 +7452,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSnapped: 0
-  instantSnap: 1
+  instantSnap: 0
   snapReference: {fileID: 2896211525543690075}
   rotationReference: {fileID: 1070895688}
 --- !u!65 &1070895690
@@ -12161,6 +12161,10 @@ PrefabInstance:
     - target: {fileID: 11400002, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: usePositionTracking
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
+      propertyPath: useRecommendedMSAALevel
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11400010, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: SnapRotation
@@ -18388,7 +18392,7 @@ MonoBehaviour:
   snapLocation: {fileID: 1070895688}
   snapParent: {fileID: 1070895688}
   isSnapped: 0
-  immovableOnceSnapped: 1
+  immovableOnceSnapped: 0
 --- !u!65 &2896211525543690078
 BoxCollider:
   m_ObjectHideFlags: 0
