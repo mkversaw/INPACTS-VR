@@ -105,15 +105,15 @@ public class controlSlides : MonoBehaviour
     {
         switch(i)
         {
-            case 1:
+            case 2:
                 playExampleRef.gameObject.SetActive(true); // play voice line of example intro
                 break;
 
-            case 2: // introducing yourself to patient
+            case 3: // introducing yourself to patient
                 playExampleRef.gameObject.SetActive(false);
                 break;
 
-            case 3: // washing hands
+            case 4: // washing hands
 
                 if (!disableWater)
                 {
@@ -125,12 +125,12 @@ public class controlSlides : MonoBehaviour
 
                 break;
 
-            case 4: // put on gloves
+            case 5: // put on gloves
 
                 
                 break;
 
-            case 5: // patient washes their hands
+            case 6: // patient washes their hands
 
                 if (!disableWater)
                 {
@@ -143,7 +143,7 @@ public class controlSlides : MonoBehaviour
 
                 break;
 
-            case 6: // prepare glucose monitor
+            case 7: // prepare glucose monitor
 
 
                 lancetRef.GetComponent<highlight2>().highlightObj();
@@ -151,7 +151,7 @@ public class controlSlides : MonoBehaviour
 
                 break;
 
-            case 7: // prepare lancet
+            case 8: // prepare lancet
 
                 //playExampleRef.gameObject.SetActive(true); // enable example for voiceline of asking patient to position their hand
 
@@ -161,14 +161,14 @@ public class controlSlides : MonoBehaviour
 
                 break;
 
-            case 8: // prick finger
+            case 9: // prick finger
 
 
                 disableNext(); // cant move on until task is done
 
                 break;
 
-            case 9:
+            case 10:
 
                 animControlRef.GetComponent<patient2>().playCottonBall(); // play animation of grabbing cotton ball
                 
@@ -176,9 +176,9 @@ public class controlSlides : MonoBehaviour
 
                 break;
 
-            case 10:
-
-                break;
+            //case 10:
+            //
+            //    break;
 
             case 11:
 

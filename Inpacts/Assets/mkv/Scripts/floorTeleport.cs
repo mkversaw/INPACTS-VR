@@ -4,30 +4,34 @@ using UnityEngine;
 
 public class floorTeleport : MonoBehaviour
 {
-    public GameObject[] objects;
-    private Vector3[] startPositions;
+    public GameObject lancetRef;
+    public GameObject glucometerRef;
+    public GameObject testStripRef;
+
+    private Vector3 lancetStart;
+    private Vector3 glucometerStart;
+    private Vector3 testStripStart;
 
     // Start is called before the first frame update
     void Start()
     {
-        startPositions = new Vector3[objects.Length];
-        for (int i = 0; i < objects.Length; i++)
-        {
-            startPositions[i] = objects[i].transform.position;
-        }
+        lancetStart = lancetRef.transform.position;
+        glucometerStart = glucometerRef.transform.position;
+        testStripStart = testStripRef.transform.position;
+        
     }
 
     private void OnTriggerEnter(Collider other) // MAKE SURE THE COLLIDER IS SET TO "TRIGGER"!
     {
-        //print("trigger entered by: " + other.gameObject.name);
-        for (int i = 0; i < objects.Length; i++)
+        if(other.CompareTag(lancetRef.tag))
         {
-            //print(objects[i].gameObject.name);
-            if(other.gameObject.name == objects[i].name)
-            {
-                print("found match w/: " + objects[i].name);
-                objects[i].transform.position = startPositions[i];
-            }
+            lancetRef.transform.position = lancetStart;
+        } else if (other.CompareTag(glucometerRef.tag))
+        {
+            glucometerRef.transform.position = glucometerStart;
+        } else if (other.CompareTag(testStripRef.tag))
+        {
+            testStripRef.transform.position = testStripStart;
         }
     }
 }

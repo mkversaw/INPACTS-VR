@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Manager
+  - Lancet
+  - Glucometer
+  - Test strip
   layers:
   - Default
   - TransparentFX
@@ -12,10 +15,10 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - No collide
+  - Hands
+  - Snap
   - 
   - 
   - 

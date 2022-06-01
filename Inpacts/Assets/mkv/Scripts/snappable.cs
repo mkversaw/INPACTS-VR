@@ -41,6 +41,7 @@ public class snappable : MonoBehaviour
         {
             if (!objectSnapped && !grabbed)
             {
+                print("test");
                 GetComponent<Rigidbody>().isKinematic = false;
             }
         }
