@@ -2017,7 +2017,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugMode: 0
-  disableWater: 1
+  disableWater: 0
   slides:
   - {fileID: 2138210254}
   - {fileID: 2058771045}
@@ -6752,7 +6752,6 @@ GameObject:
   - component: {fileID: 994079973}
   - component: {fileID: 994079972}
   - component: {fileID: 994079974}
-  - component: {fileID: 994079975}
   - component: {fileID: 994079977}
   - component: {fileID: 994079976}
   m_Layer: 7
@@ -6802,8 +6801,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.16396642, y: 1, z: 0.42112255}
-  m_Center: {x: 0.1550256, y: 0, z: 0.12817812}
+  m_Size: {x: 0.16396643, y: 0.92889977, z: 0.42112258}
+  m_Center: {x: 0.1550256, y: -0.035550117, z: 0.12817812}
 --- !u!54 &994079973
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6837,19 +6836,6 @@ MonoBehaviour:
   m_snapOrientation: 1
   m_snapOffset: {fileID: 1037620771}
   m_grabPoints: []
---- !u!135 &994079975
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 994079970}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &994079976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7434,7 +7420,7 @@ GameObject:
   - component: {fileID: 1070895689}
   m_Layer: 9
   m_Name: snapZone
-  m_TagString: Untagged
+  m_TagString: Glucometer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7452,7 +7438,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSnapped: 0
-  instantSnap: 0
+  instantSnap: 1
   snapReference: {fileID: 2896211525543690075}
   rotationReference: {fileID: 1070895688}
 --- !u!65 &1070895690
@@ -8519,7 +8505,7 @@ GameObject:
   - component: {fileID: 1360418991}
   m_Layer: 9
   m_Name: snapZone
-  m_TagString: Untagged
+  m_TagString: Lancet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12167,8 +12153,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11400010, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
+      propertyPath: Damping
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400010, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: SnapRotation
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400010, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
+      propertyPath: RotationAmount
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11400010, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: useProfileData
@@ -25555,7 +25549,6 @@ GameObject:
   - component: {fileID: 5114528218736464551}
   - component: {fileID: 7010023921282427229}
   - component: {fileID: 8127965768044521957}
-  - component: {fileID: 8127965768044521958}
   m_Layer: 0
   m_Name: trashCan
   m_TagString: Untagged
@@ -25577,19 +25570,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2549373915164636881, guid: f494cffa82e25ae4db35c65fe699dded, type: 3}
---- !u!65 &8127965768044521958
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8127965768044521956}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.0634604, y: 3.1780748, z: 1.3109176}
-  m_Center: {x: 0.0000029206283, y: 0.00000017881393, z: -0.000002622605}
 --- !u!4 &8183230522146204778
 Transform:
   m_ObjectHideFlags: 0

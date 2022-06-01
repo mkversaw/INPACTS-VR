@@ -170,19 +170,16 @@ public class controlSlides : MonoBehaviour
 
             case 10:
 
+                break;
+
+            case 11:
+
                 animControlRef.GetComponent<patient2>().playCottonBall(); // play animation of grabbing cotton ball
                 
                 sharpsBinRef.GetComponent<sharpsBin>().canDelete = true; // let sharps bin delete lancet
 
                 break;
 
-            //case 10:
-            //
-            //    break;
-
-            case 11:
-
-                break;
 
             case 12:
 
