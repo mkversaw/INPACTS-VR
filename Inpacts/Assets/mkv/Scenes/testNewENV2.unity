@@ -2050,7 +2050,7 @@ MonoBehaviour:
   sharpsBinRef: {fileID: 7765550856357087516}
   nextRef: {fileID: 1849931897}
   playExampleRef: {fileID: 330935703}
-  currSlide: 1
+  currSlide: 0
 --- !u!114 &329673893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12427,7 +12427,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2058771046
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12921,7 +12921,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2138210255
 RectTransform:
   m_ObjectHideFlags: 0
