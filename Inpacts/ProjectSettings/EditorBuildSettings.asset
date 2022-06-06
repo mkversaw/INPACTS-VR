@@ -5,12 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/mkv/Scenes/testSnap.unity
-    guid: 527e5ef2f22d078439fa6a3c9c930061
-  - enabled: 0
-    path: Assets/mkv/Scenes/main.unity
-    guid: c59c6e6311cee1d4ea09e5263fa626fa
   - enabled: 1
     path: Assets/mkv/Scenes/testNewENV2.unity
     guid: c3baed83d86b3ab4283b786a17adcb77

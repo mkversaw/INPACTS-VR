@@ -18,6 +18,7 @@ public class controlSlides : MonoBehaviour
     [SerializeField] private GameObject lancetRef;
     [SerializeField] private GameObject prickSiteRef;
     [SerializeField] private GameObject sharpsBinRef;
+    [SerializeField] private GameObject trashCanRef;
 
     
     
@@ -170,6 +171,7 @@ public class controlSlides : MonoBehaviour
 
             case 10:
 
+                trashCanRef.GetComponent<highlight2>().highlightObj(); // highlight the trashCan
                 break;
 
             case 11:
