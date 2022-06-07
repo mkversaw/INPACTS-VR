@@ -28,6 +28,7 @@ public class controlSlides : MonoBehaviour
     [SerializeField] private Button playExampleRef;
 
     public int currSlide = 0;
+    private int backSlide = 0;
 
     private bool canMoveOn = true; // whether the user still needs to complete some action before going to next slide
 
@@ -39,6 +40,7 @@ public class controlSlides : MonoBehaviour
 
     void Start()
     {
+        backSlide = currSlide;
         GameObject.Find("CenterEyeAnchor").GetComponent<OVRScreenFade>().FadeIn(); // start scene with a fade in effect
         slides[currSlide].SetActive(true); // enable the first slide
         slideEvent(currSlide);
@@ -104,6 +106,12 @@ public class controlSlides : MonoBehaviour
 
     private void slideEvent(int i) // if the given slide has an event, then play it
     {
+
+        if(backSlide != currSlide) // ensure that no action runs twice
+        {
+            return;
+        }
+
         switch(i)
         {
             case 2:
@@ -229,24 +237,37 @@ public class controlSlides : MonoBehaviour
 
             if (currSlide == slides.Count - 1) // if on the last slide
             {
-                if (loopSlides) // loop back to first slide
-                {
-                    slides[currSlide].SetActive(false); // disable the current slide
-                    currSlide = 0; // reset currSlide counter
-                    slides[currSlide].SetActive(true);
-                }
-
+                backSlide = currSlide;
                 slideEvent(currSlide);
             }
             else // base case
             {
-                slides[currSlide].SetActive(false); // disable the current slide
-                currSlide++;
-                slides[currSlide].SetActive(true); // make the next slide active
+                backSlide++;
+                if (backSlide != currSlide)
+                {
+                    slides[backSlide].SetActive(false); // disable the current slide
+                    slides[backSlide].SetActive(true); // make the next slide active
+                }
+                else
+                {
+                    slides[currSlide].SetActive(false); // disable the current slide
+                    currSlide++;
+                    slides[currSlide].SetActive(true); // make the next slide active
 
-                
-                slideEvent(currSlide);
+
+                    slideEvent(currSlide);
+                }
             }
+        }
+    }
+
+    public void prevSlide()
+    {
+        if(backSlide > 0) // dont go past the first slide
+        {
+            slides[backSlide].SetActive(false); // disable the current slide
+            backSlide -= 1; // decrement backSlide counter
+            slides[backSlide].SetActive(true); // enable the previous slide
         }
     }
 
