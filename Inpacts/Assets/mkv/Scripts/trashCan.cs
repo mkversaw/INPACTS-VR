@@ -17,10 +17,12 @@ public class trashCan : MonoBehaviour
 
     public GameObject testStripRef;
     public GameObject lancetCapRef;
+    private GameObject manager;
 
     void Start()
     {
         Texture handTex = leftHandRef.GetComponent<SkinnedMeshRenderer>().material.mainTexture; // get the meshRenderer component from the hand(s)
+        manager = GameObject.FindGameObjectWithTag("Manager");
     }
 
     private void OnCollisionEnter(Collision other)
@@ -33,6 +35,9 @@ public class trashCan : MonoBehaviour
                 {
                     leftHandRef.GetComponent<SkinnedMeshRenderer>().material.mainTexture = handTex;
                     rightHandRef.GetComponent<SkinnedMeshRenderer>().material.mainTexture = handTex;
+
+                    manager.GetComponent<createSmoke>().spawnSmoke(other.transform);
+
                     hasGloves = false;
                     TryMoveOn();
 
@@ -41,11 +46,13 @@ public class trashCan : MonoBehaviour
             {
                 testStripRef.SetActive(false);
                 deletedStrip = true;
+                manager.GetComponent<createSmoke>().spawnSmoke(gameObject.transform);
                 TryMoveOn();
             } else if (other.gameObject == lancetCapRef)
             {
                 lancetCapRef.SetActive(false);
                 deletedCap = true;
+                manager.GetComponent<createSmoke>().spawnSmoke(gameObject.transform);
                 TryMoveOn();
             }
         }

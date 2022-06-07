@@ -19,6 +19,9 @@ public class gloveBox : MonoBehaviour
     {
         if ( (other.gameObject.name == leftCollider.name || other.gameObject.name == rightCollider.name ) && !hasGloves && gameObject.GetComponent<highlight2>().isHighlighted) // make sure object entering is the hands, and dont already have gloves
         {
+            GameObject manager = GameObject.FindGameObjectWithTag("Manager");
+            manager.GetComponent<createSmoke>().spawnSmoke(gameObject.transform);
+
             print(other.gameObject.name + "glove box triggered");
             SkinnedMeshRenderer meshRendererLeft = handLeft.GetComponent<SkinnedMeshRenderer>(); // get the meshRenderer component from the hand(s)
             SkinnedMeshRenderer meshRendererRight = handRight.GetComponent<SkinnedMeshRenderer>(); // get the meshRenderer component from the hand(s)
@@ -28,8 +31,8 @@ public class gloveBox : MonoBehaviour
 
             hasGloves = true;
             gameObject.GetComponent<highlight2>().unhighlightObj(); // remove highlight
-            GameObject.FindGameObjectWithTag("Manager").GetComponent<controlSlides>().hasGloves = true;
-            GameObject.FindGameObjectWithTag("Manager").GetComponent<controlSlides>().enableNext(); // update glove status in manager!
+            manager.GetComponent<controlSlides>().hasGloves = true;
+            manager.GetComponent<controlSlides>().enableNext(); // update glove status in manager!
         }
     }
 

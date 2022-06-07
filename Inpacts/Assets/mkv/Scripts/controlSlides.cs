@@ -25,12 +25,15 @@ public class controlSlides : MonoBehaviour
 
 
     [SerializeField] private Button nextRef;
+    [SerializeField] private Button prevRef;
     [SerializeField] private Button playExampleRef;
 
     public int currSlide = 0;
-    private int backSlide = 0;
+    public int backSlide = 0;
+    public int lockPoint = -1;
 
     private bool canMoveOn = true; // whether the user still needs to complete some action before going to next slide
+    private bool queuedEnable = false;
 
     [System.NonSerialized] public bool hasGloves = false; // is user wearing gloves?
     [System.NonSerialized] public bool stripInMonitor = false; // is glucose test strip in the monitor?
@@ -95,9 +98,17 @@ public class controlSlides : MonoBehaviour
         canMoveOn = false;
     }
 
-    public void enableNext()
+    public void enableNext(bool playSound = true)
     {
-        managerRef.GetComponent<controlSound>().Play("completed"); // play completed task sound
+        if (playSound)
+        {
+            managerRef.GetComponent<controlSound>().Play("completed"); // play completed task sound
+        }
+        
+        if(backSlide != currSlide) // need to "queue" the enable, save it for when they get back to the slide they were stopped at before
+        {
+            queuedEnable = true;
+        }
 
         nextRef.interactable = true; // ungray the button
         canMoveOn = true;
@@ -107,10 +118,10 @@ public class controlSlides : MonoBehaviour
     private void slideEvent(int i) // if the given slide has an event, then play it
     {
 
-        if(backSlide != currSlide) // ensure that no action runs twice
-        {
-            return;
-        }
+        //if(backSlide != currSlide) // ensure that no action runs twice
+        //{
+        //    return;
+        //}
 
         switch(i)
         {
@@ -233,22 +244,39 @@ public class controlSlides : MonoBehaviour
     {
         if (canMoveOn)
         {
+            prevRef.interactable = true;
             managerRef.GetComponent<controlSound>().Play("click"); // play button click noise
 
             if (currSlide == slides.Count - 1) // if on the last slide
             {
-                backSlide = currSlide;
-                slideEvent(currSlide);
+                if (backSlide == currSlide)
+                {
+                    backSlide = currSlide;
+                    slideEvent(currSlide);
+                }
             }
             else // base case
             {
-                backSlide++;
-                if (backSlide != currSlide)
+
+
+
+                if (backSlide != currSlide) // no event should play
                 {
+                    if (backSlide == (lockPoint - 1))
+                    {
+                        if (!queuedEnable)
+                        {
+                            disableNext();
+                        } else
+                        {
+                            queuedEnable = false; // "expire/empty" the queue
+                        }
+                    }
+
                     slides[backSlide].SetActive(false); // disable the current slide
-                    slides[backSlide].SetActive(true); // make the next slide active
+                    slides[backSlide + 1].SetActive(true); // make the next slide active
                 }
-                else
+                else // event should play
                 {
                     slides[currSlide].SetActive(false); // disable the current slide
                     currSlide++;
@@ -257,6 +285,7 @@ public class controlSlides : MonoBehaviour
 
                     slideEvent(currSlide);
                 }
+                backSlide++;
             }
         }
     }
@@ -265,8 +294,22 @@ public class controlSlides : MonoBehaviour
     {
         if(backSlide > 0) // dont go past the first slide
         {
+
+            if(backSlide == 1)
+            {
+                prevRef.interactable = false; // gray the button out
+            }
+            
+            managerRef.GetComponent<controlSound>().Play("click"); // play button click noise
+
+            if (backSlide == currSlide && !canMoveOn) // remember if progress is "locked" !!!
+            {
+                enableNext(false);
+                lockPoint = currSlide;
+            }
+
             slides[backSlide].SetActive(false); // disable the current slide
-            backSlide -= 1; // decrement backSlide counter
+            backSlide--; // decrement backSlide counter
             slides[backSlide].SetActive(true); // enable the previous slide
         }
     }

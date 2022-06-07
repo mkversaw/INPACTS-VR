@@ -15,6 +15,7 @@ public class sharpsBin : MonoBehaviour
             //    //Destroy(lanceRef); FIX THIS
             //    lanceRef.SetActive(false);
             //}
+            GameObject.FindGameObjectWithTag("Manager").GetComponent<createSmoke>().spawnSmoke(gameObject.transform);
             lanceRef.SetActive(false);
         }
     }
