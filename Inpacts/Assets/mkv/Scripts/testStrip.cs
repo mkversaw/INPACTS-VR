@@ -7,6 +7,7 @@ public class testStrip : MonoBehaviour
     [SerializeField] private GameObject bloodRef;
     //[SerializeField] private GameObject bloodCollider;
     [SerializeField] private GameObject textRef;
+    [SerializeField] private GameObject thisRef; // ???
 
     bool touchedBlood = false;
     private void OnTriggerEnter(Collider other)
@@ -14,10 +15,13 @@ public class testStrip : MonoBehaviour
         if (other.gameObject == bloodRef && !touchedBlood)
         {
             print("test strip touched blood!");
+            thisRef.GetComponent<basemapSequencer>().startSequence();
             Destroy(bloodRef);
             textRef.SetActive(true);
 
             touchedBlood = true;
+
+            
 
             GameObject.FindGameObjectWithTag("Manager").GetComponent<controlSlides>().enableNext(); // update status in manager
             GameObject.FindGameObjectWithTag("Manager").GetComponent<controlSlides>().stripTouchedBlood = true; // update status in manager

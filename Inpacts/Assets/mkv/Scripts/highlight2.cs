@@ -24,7 +24,7 @@ public class highlight2 : MonoBehaviour
 		rends = new List<Renderer>();
 		oldMats = new List<Material>();
 
-		print("highlighting obj");
+		//print("highlighting obj");
 
 		foreach (Renderer r in components) // iterate through those materials
 		{
@@ -56,7 +56,7 @@ public class highlight2 : MonoBehaviour
 
 	IEnumerator FlashObj()
 	{
-		print("flashing obj");
+		//print("flashing obj");
 		while (true)
 		{
 			for (int i = 0; i < rends.Count; i++) // for each renderer material

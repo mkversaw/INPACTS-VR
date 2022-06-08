@@ -18,7 +18,7 @@ public class snapToLocation : MonoBehaviour
     {
         if (other.gameObject.name == snapReference.name)
         {
-            print(other.gameObject.name + " is inside snap zone!");
+            //print(other.gameObject.name + " is inside snap zone!");
             insideSnapZone = true;
         }
     }
@@ -28,7 +28,7 @@ public class snapToLocation : MonoBehaviour
     {
         if(other.gameObject.name == snapReference.name)
         {
-            print(other.gameObject.name + " left the snap zone!");
+            //print(other.gameObject.name + " left the snap zone!");
             insideSnapZone = false;
             isSnapped = false;
         }

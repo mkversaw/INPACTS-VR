@@ -25,14 +25,15 @@ public class snappable : MonoBehaviour
 
 
             GetComponent<Rigidbody>().isKinematic = true;
+            
             transform.SetParent(snapParent.transform);
+            
             isSnapped = true;
             
             if(!grabbed)
             {
                 if (name == "Test strip")
                 {
-                    print("test");
                     snapLocation.GetComponent<snapToLocation>().instantSnap = false;
                 }
             }
@@ -42,7 +43,7 @@ public class snappable : MonoBehaviour
 
         if(!objectSnapped)
         {
-            //transform.parent = null;
+            transform.parent = null;
             //GetComponent<Rigidbody>().isKinematic = false;
         }
 
