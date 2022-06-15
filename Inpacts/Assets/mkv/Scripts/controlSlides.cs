@@ -20,8 +20,9 @@ public class controlSlides : MonoBehaviour
     [SerializeField] private GameObject sharpsBinRef;
     [SerializeField] private GameObject trashCanRef;
 
-    
-    
+    [SerializeField] private GameObject urineStripRef;
+    [SerializeField] private GameObject urineBottleRef;
+
 
 
     [SerializeField] private Button nextRef;
@@ -141,6 +142,7 @@ public class controlSlides : MonoBehaviour
                 }
 
                 gloveBoxRef.GetComponent<highlight2>().highlightObj(); // highlight the glovebox
+                gloveBoxRef.GetComponent<gloveBox>().highlighted = true; // highlight the glovebox
                 disableNext(); // cant move on until task is done
 
                 break;
@@ -190,10 +192,14 @@ public class controlSlides : MonoBehaviour
 
             case 10:
 
-                trashCanRef.GetComponent<highlight2>().highlightObj(); // highlight the trashCan
+                gloveBoxRef.GetComponent<gloveBox>().highlighted = true;
+                gloveBoxRef.GetComponent<gloveBox>().hasGloves = true;
+
                 break;
 
             case 11:
+
+                trashCanRef.GetComponent<highlight2>().highlightObj(); // highlight the trashCan
 
                 animControlRef.GetComponent<patient2>().playCottonBall(); // play animation of grabbing cotton ball
                 
@@ -204,9 +210,19 @@ public class controlSlides : MonoBehaviour
 
             case 12:
 
+                gloveBoxRef.GetComponent<gloveBox>().highlighted = true;
+                gloveBoxRef.GetComponent<gloveBox>().hasGloves = false;
+                disableNext();
+
                 break;
 
             case 13:
+
+                urineBottleRef.SetActive(true);
+                urineBottleRef.GetComponent<urineBottle>().urineEnable();
+
+                urineStripRef.GetComponent<highlight2>().highlightObj();
+                disableNext();
 
                 break;
 

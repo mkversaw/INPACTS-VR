@@ -15,12 +15,12 @@ C:/Users/Miles/Desktop/INPACTS-VR/Inpacts
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-57166
+57568
 Successfully changed project path to: C:/Users/Miles/Desktop/INPACTS-VR/Inpacts
 C:/Users/Miles/Desktop/INPACTS-VR/Inpacts
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 993.91 ms, found 13 plugins.
-Preloading 2 native plugins for Editor in 3.70 ms.
+Refreshing native plugins compatible for Editor in 105.34 ms, found 13 plugins.
+Preloading 2 native plugins for Editor in 1.59 ms.
 Initialize engine version: 2020.3.16f1 (049d6eca3c44)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/Resources/UnitySubsystems
 [Subsystems] Discovering subsystems at path C:/Users/Miles/Desktop/INPACTS-VR/Inpacts/Assets
@@ -37,81 +37,81 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56972
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56120
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001642 seconds.
+Registered in 0.001602 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 115.49 ms, found 13 plugins.
-Preloading 2 native plugins for Editor in 0.13 ms.
+Refreshing native plugins compatible for Editor in 93.18 ms, found 13 plugins.
+Preloading 2 native plugins for Editor in 0.10 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  5.159 seconds
+- Completed reload, in  1.532 seconds
 Domain Reload Profiling:
-	ReloadAssembly (5159ms)
-		BeginReloadAssembly (47ms)
+	ReloadAssembly (1533ms)
+		BeginReloadAssembly (41ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (531ms)
-			LoadAssemblies (45ms)
+		EndReloadAssembly (402ms)
+			LoadAssemblies (40ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (152ms)
+			SetupTypeCache (125ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (27ms)
-			SetupLoadedEditorAssemblies (274ms)
+			RebuildScriptCaches (22ms)
+			SetupLoadedEditorAssemblies (191ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (4ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (116ms)
-				BeforeProcessingInitializeOnLoad (17ms)
-				ProcessInitializeOnLoadAttributes (107ms)
-				ProcessInitializeOnLoadMethodAttributes (29ms)
+				RefreshPlugins (93ms)
+				BeforeProcessingInitializeOnLoad (13ms)
+				ProcessInitializeOnLoadAttributes (60ms)
+				ProcessInitializeOnLoadMethodAttributes (21ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.159390 seconds.
+Registered in 0.007909 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 92.66 ms, found 13 plugins.
-Preloading 2 native plugins for Editor in 0.10 ms.
+Refreshing native plugins compatible for Editor in 92.80 ms, found 13 plugins.
+Preloading 2 native plugins for Editor in 0.12 ms.
 [XR] OculusXRPlugin: registering subsystems
 [XR] Unable to register display lifecyle provider: [1]
 [XR] Oculus Input lifecycle provider registered.
 [XR] Unable to register input lifecyle provider: [1]
 [XR] OVRP version 1.67.0
 Mono: successfully reloaded assembly
-- Completed reload, in  1.240 seconds
+- Completed reload, in  1.257 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1241ms)
-		BeginReloadAssembly (119ms)
+	ReloadAssembly (1258ms)
+		BeginReloadAssembly (117ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (4ms)
+			DisableScriptedObjects (3ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (17ms)
-		EndReloadAssembly (1067ms)
+			CreateAndSetChildDomain (16ms)
+		EndReloadAssembly (1090ms)
 			LoadAssemblies (83ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (320ms)
+			SetupTypeCache (341ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (75ms)
-			SetupLoadedEditorAssemblies (472ms)
+			RebuildScriptCaches (74ms)
+			SetupLoadedEditorAssemblies (480ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (4ms)
 				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (93ms)
-				BeforeProcessingInitializeOnLoad (94ms)
-				ProcessInitializeOnLoadAttributes (265ms)
-				ProcessInitializeOnLoadMethodAttributes (12ms)
+				BeforeProcessingInitializeOnLoad (95ms)
+				ProcessInitializeOnLoadAttributes (273ms)
+				ProcessInitializeOnLoadMethodAttributes (11ms)
 				AfterProcessingInitializeOnLoad (4ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
@@ -121,15 +121,15 @@ Platform modules already initialized, skipping
 Worker process is ready to serve import requests
 Shader 'Oculus/OVRMRCameraFrameLit': fallback shader 'Alpha-Diffuse' not found
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
-Refreshing native plugins compatible for Editor in 1.22 ms, found 13 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 1.18 ms, found 13 plugins.
 Preloading 2 native plugins for Editor in 0.12 ms.
 Unloading 4662 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 200.4 MB.
-System memory in use after: 200.1 MB.
+System memory in use before: 200.3 MB.
+System memory in use after: 200.0 MB.
 
-Unloading 52 unused Assets to reduce memory usage. Loaded Objects now: 5080.
-Total: 3.978400 ms (FindLiveObjects: 0.395300 ms CreateObjectMapping: 0.207100 ms MarkObjects: 2.968100 ms  DeleteObjects: 0.407000 ms)
+Unloading 52 unused Assets to reduce memory usage. Loaded Objects now: 5081.
+Total: 5.058200 ms (FindLiveObjects: 0.689300 ms CreateObjectMapping: 0.451400 ms MarkObjects: 3.420200 ms  DeleteObjects: 0.495900 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -142,4 +142,170 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-AssetImportWorkerClient::OnTransportError - code=2 error=End of file
+========================================================================
+Received Import Request.
+  path: Assets/mkv/Props/UrinalysisBottle-20220614T065001Z-001/UrinalysisBottle/urinalysisBottle.fbx
+  artifactKey: Guid(65d19f69097b15741834fcff484be7ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/mkv/Props/UrinalysisBottle-20220614T065001Z-001/UrinalysisBottle/urinalysisBottle.fbx using Guid(65d19f69097b15741834fcff484be7ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '180a33a4d1b041135d6318c49b6e8424') in 0.267056 seconds 
+  Import took 0.274578 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000249 seconds.
+  path: Assets/mkv/Props/UrinalysisBottle-20220614T065001Z-001/UrinalysisBottle/urinalysisBottle_lambert1_SpecularSmoothness.png
+  artifactKey: Guid(12e979c5b2f8dad4da98714382a6bebf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/mkv/Props/UrinalysisBottle-20220614T065001Z-001/UrinalysisBottle/urinalysisBottle_lambert1_SpecularSmoothness.png using Guid(12e979c5b2f8dad4da98714382a6bebf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd9f7f1ed8305d90099343f1ecc7bebeb') in 0.066227 seconds 
+  Import took 0.072732 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000234 seconds.
+  path: Assets/mkv/Props/UrinalysisBottle-20220614T065001Z-001/UrinalysisBottle/urinalysisBottle_lambert1_Normal.png
+  artifactKey: Guid(30301114b8196bc4d9d726477b5f91be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/mkv/Props/UrinalysisBottle-20220614T065001Z-001/UrinalysisBottle/urinalysisBottle_lambert1_Normal.png using Guid(30301114b8196bc4d9d726477b5f91be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc5943b5308955b320814cb3f405cfdd') in 0.014770 seconds 
+  Import took 0.020520 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000238 seconds.
+  path: Assets/mkv/Props/UrinalysisBottle-20220614T065001Z-001/UrinalysisBottle
+  artifactKey: Guid(d2858b947a3aef143af64a5c1e434bda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/mkv/Props/UrinalysisBottle-20220614T065001Z-001/UrinalysisBottle using Guid(d2858b947a3aef143af64a5c1e434bda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b144bc460b1f8817c15882c98acb53f') in 0.004329 seconds 
+  Import took 0.009879 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000207 seconds.
+  path: Assets/mkv/Props/UrinalysisBottle-20220614T065001Z-001/UrinalysisBottle/urinalysisBottle_lambert1_AlbedoTransparency.png
+  artifactKey: Guid(a05d4cfc27baac24b8bbd447a9614097) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/mkv/Props/UrinalysisBottle-20220614T065001Z-001/UrinalysisBottle/urinalysisBottle_lambert1_AlbedoTransparency.png using Guid(a05d4cfc27baac24b8bbd447a9614097) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '273537d35defee49c22f84a302373471') in 0.012954 seconds 
+  Import took 0.018363 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000230 seconds.
+  path: Assets/mkv/Props/UrinalysisBottle-20220614T065001Z-001
+  artifactKey: Guid(15de87f54799e1c429ad80bcec2616a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/mkv/Props/UrinalysisBottle-20220614T065001Z-001 using Guid(15de87f54799e1c429ad80bcec2616a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '793eec8db3b07af5b9b77b18bea3c6b5') in 0.004318 seconds 
+  Import took 0.009749 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.240235 seconds.
+  path: Assets/mkv/Props/UrinalysisBottle-20220614T065001Z-001/UrinalysisBottle/urinalysisBottle.fbx
+  artifactKey: Guid(65d19f69097b15741834fcff484be7ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/mkv/Props/UrinalysisBottle-20220614T065001Z-001/UrinalysisBottle/urinalysisBottle.fbx using Guid(65d19f69097b15741834fcff484be7ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00f4c76936a1bfa0ba093430dbe343f8') in 0.020304 seconds 
+  Import took 0.027619 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 143.958054 seconds.
+  path: Assets/mkv/Props/UrinalysisBottle-20220614T065001Z-001/UrinalysisBottle/urinalysisBottle_lambert1_AlbedoTransparency.png
+  artifactKey: Guid(a05d4cfc27baac24b8bbd447a9614097) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/mkv/Props/UrinalysisBottle-20220614T065001Z-001/UrinalysisBottle/urinalysisBottle_lambert1_AlbedoTransparency.png using Guid(a05d4cfc27baac24b8bbd447a9614097) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2787383196f636b28b94b3803e154c5') in 0.020286 seconds 
+  Import took 0.027386 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 46.833370 seconds.
+  path: Assets/mkv/Props/UrinalysisBottle-20220614T065001Z-001/UrinalysisBottle/urinalysisBottle_lambert1_Normal.png
+  artifactKey: Guid(30301114b8196bc4d9d726477b5f91be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/mkv/Props/UrinalysisBottle-20220614T065001Z-001/UrinalysisBottle/urinalysisBottle_lambert1_Normal.png using Guid(30301114b8196bc4d9d726477b5f91be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '92fb7afcb7947439cb3da56603c5f244') in 0.017610 seconds 
+  Import took 0.024024 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 293.019368 seconds.
+  path: Assets/mkv/Props/UrinalysisBottle-20220614T065001Z-001/UrinalysisBottle/urinalysisBottle.fbx
+  artifactKey: Guid(65d19f69097b15741834fcff484be7ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/mkv/Props/UrinalysisBottle-20220614T065001Z-001/UrinalysisBottle/urinalysisBottle.fbx using Guid(65d19f69097b15741834fcff484be7ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86b185398528d6837ef0b7ff3df74533') in 0.018670 seconds 
+  Import took 0.026090 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.873719 seconds.
+  path: Assets/mkv/Props/UrinalysisBottle-20220614T065001Z-001/UrinalysisBottle/urinalysisBottle.fbx
+  artifactKey: Guid(65d19f69097b15741834fcff484be7ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/mkv/Props/UrinalysisBottle-20220614T065001Z-001/UrinalysisBottle/urinalysisBottle.fbx using Guid(65d19f69097b15741834fcff484be7ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f10a918f011d48466773469b1f26ed6') in 0.020137 seconds 
+  Import took 0.026639 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 300.561515 seconds.
+  path: Assets/mkv/Props/UrinalysisBottle-20220614T065001Z-001/UrinalysisBottle/test.fbx
+  artifactKey: Guid(2705f08eca28b0d47a1568ed4b113a5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/mkv/Props/UrinalysisBottle-20220614T065001Z-001/UrinalysisBottle/test.fbx using Guid(2705f08eca28b0d47a1568ed4b113a5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe0dc1b4fc6e3040cb6da3033ca03352') in 0.021043 seconds 
+  Import took 0.028243 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.415903 seconds.
+  path: Assets/mkv/Props/UrinalysisBottle-20220614T065001Z-001/UrinalysisBottle/test.fbx
+  artifactKey: Guid(2705f08eca28b0d47a1568ed4b113a5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/mkv/Props/UrinalysisBottle-20220614T065001Z-001/UrinalysisBottle/test.fbx using Guid(2705f08eca28b0d47a1568ed4b113a5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22405f1e8baf89cf5f717aef904e7230') in 0.023560 seconds 
+  Import took 0.030361 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.778908 seconds.
+  path: Assets/mkv/Props/UrinalysisBottle-20220614T065001Z-001/UrinalysisBottle/Materials
+  artifactKey: Guid(f0d94d2b637f20940ba6608c93aa7996) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/mkv/Props/UrinalysisBottle-20220614T065001Z-001/UrinalysisBottle/Materials using Guid(f0d94d2b637f20940ba6608c93aa7996) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ecf8b34ff5141974d70bbd400695401') in 0.005208 seconds 
+  Import took 0.011787 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.214224 seconds.
+  path: Assets/mkv/Props/UrinalysisBottle-20220614T065001Z-001/UrinalysisBottle/Materials/lambert1.mat
+  artifactKey: Guid(30982fae8ffab794bb0b1a3c5d26e552) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/mkv/Props/UrinalysisBottle-20220614T065001Z-001/UrinalysisBottle/Materials/lambert1.mat using Guid(30982fae8ffab794bb0b1a3c5d26e552) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa837a0f24784ed8e3fc4f2e9337fbc6') in 0.014592 seconds 
+  Import took 0.021015 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 300.202209 seconds.
+  path: Assets/mkv/Props/UrinalysisBottle-20220614T065001Z-001/UrinalysisBottle/test2.fbx
+  artifactKey: Guid(d76b4e6f3d9c9284c969464855bbbae1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/mkv/Props/UrinalysisBottle-20220614T065001Z-001/UrinalysisBottle/test2.fbx using Guid(d76b4e6f3d9c9284c969464855bbbae1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b11c15d7ad4dc34a5b84f8269ba8c42') in 0.025715 seconds 
+  Import took 0.033148 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 13.983376 seconds.
+  path: Assets/mkv/Props/UrinalysisBottle-20220614T065001Z-001/UrinalysisBottle/test2.fbx
+  artifactKey: Guid(d76b4e6f3d9c9284c969464855bbbae1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/mkv/Props/UrinalysisBottle-20220614T065001Z-001/UrinalysisBottle/test2.fbx using Guid(d76b4e6f3d9c9284c969464855bbbae1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c7d345d0d6448acd0f59b1616078ce06') in 0.021345 seconds 
+  Import took 0.028887 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002043 seconds.
+  path: Assets/mkv/Props/UrinalysisBottle-20220614T065001Z-001/UrinalysisBottle/test2.fbx
+  artifactKey: Guid(d76b4e6f3d9c9284c969464855bbbae1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/mkv/Props/UrinalysisBottle-20220614T065001Z-001/UrinalysisBottle/test2.fbx using Guid(d76b4e6f3d9c9284c969464855bbbae1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c7d345d0d6448acd0f59b1616078ce06') in 0.019950 seconds 
+  Import took 0.026797 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 95.744852 seconds.
+  path: Assets/mkv/Props/UrinalysisBottle-20220614T065001Z-001/UrinalysisBottle/Materials/New Material.mat
+  artifactKey: Guid(5e7824398207d024d8310a6430f42d46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/mkv/Props/UrinalysisBottle-20220614T065001Z-001/UrinalysisBottle/Materials/New Material.mat using Guid(5e7824398207d024d8310a6430f42d46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4711d6637304d2b5b3f0825ff79de307') in 0.011158 seconds 
+  Import took 0.018434 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.100709 seconds.
+  path: Assets/mkv/Props/UrinalysisBottle-20220614T065001Z-001/UrinalysisBottle/Materials/New Material.mat
+  artifactKey: Guid(5e7824398207d024d8310a6430f42d46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/mkv/Props/UrinalysisBottle-20220614T065001Z-001/UrinalysisBottle/Materials/New Material.mat using Guid(5e7824398207d024d8310a6430f42d46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ecb91732dcceae4b7698c55d00083ac4') in 0.008799 seconds 
+  Import took 0.015624 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000182 seconds.
+  path: Assets/mkv/Props/UrinalysisBottle-20220614T065001Z-001/UrinalysisBottle/Materials/urinalysisBottle_lambert1_AlbedoTransparency.mat
+  artifactKey: Guid(c07c314b012a9454f8b64f3c764ed25f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/mkv/Props/UrinalysisBottle-20220614T065001Z-001/UrinalysisBottle/Materials/urinalysisBottle_lambert1_AlbedoTransparency.mat using Guid(c07c314b012a9454f8b64f3c764ed25f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '551903f7943431cfd90ba7fec50b18d6') in 0.045121 seconds 
+  Import took 0.051588 seconds .
+
