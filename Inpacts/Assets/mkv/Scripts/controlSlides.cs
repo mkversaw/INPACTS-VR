@@ -192,8 +192,8 @@ public class controlSlides : MonoBehaviour
 
             case 10:
 
-                gloveBoxRef.GetComponent<gloveBox>().highlighted = true;
-                gloveBoxRef.GetComponent<gloveBox>().hasGloves = true;
+                //gloveBoxRef.GetComponent<gloveBox>().highlighted = true;
+                //gloveBoxRef.GetComponent<gloveBox>().hasGloves = true;
 
                 break;
 
@@ -205,10 +205,18 @@ public class controlSlides : MonoBehaviour
                 
                 sharpsBinRef.GetComponent<sharpsBin>().canDelete = true; // let sharps bin delete lancet
 
+                disableNext();
+
                 break;
 
 
             case 12:
+
+
+
+                break;
+
+            case 13:
 
                 gloveBoxRef.GetComponent<gloveBox>().highlighted = true;
                 gloveBoxRef.GetComponent<gloveBox>().hasGloves = false;
@@ -216,17 +224,13 @@ public class controlSlides : MonoBehaviour
 
                 break;
 
-            case 13:
+            case 14:
 
                 urineBottleRef.SetActive(true);
                 urineBottleRef.GetComponent<urineBottle>().urineEnable();
 
                 urineStripRef.GetComponent<highlight2>().highlightObj();
                 disableNext();
-
-                break;
-
-            case 14:
 
                 break;
 

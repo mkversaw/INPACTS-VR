@@ -12,7 +12,7 @@ public class trashCan : MonoBehaviour
 
     [System.NonSerialized] public bool hasGloves = true;
     [System.NonSerialized] public bool deletedStrip = false;
-    [System.NonSerialized] public bool deletedCap = false;
+    [System.NonSerialized] public bool deletedCap = true;
 
     private Texture handTex;
 

@@ -23,6 +23,7 @@ ScriptsOnlyBuild:
     - snappable
     - testStrip
     - trashCan
+    - urineBottle
     - wasGrabbed
     Oculus.Spatializer.dll:
     - ONSPSettings
@@ -82,7 +83,6 @@ ScriptsOnlyBuild:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.ShaderGraph.Editor.dll:
     - UnityEditor.ShaderGraph.Drawing.MaterialGraphEditWindow
-    - UnityEditor.ShaderGraph.Internal.ShaderGraphVfxAsset
     Unity.TextMeshPro.dll:
     - TMPro.TMP_FontAsset
     - TMPro.TMP_Settings
@@ -94,34 +94,7 @@ ScriptsOnlyBuild:
     - UnityEditor.Timeline.SequenceHierarchy
     - UnityEditor.Timeline.TimelineWindow
     Unity.VisualEffectGraph.Editor.dll:
-    - UnityEditor.VFX.Block.AttributeFromCurve
-    - UnityEditor.VFX.Block.PositionCircle
-    - UnityEditor.VFX.Block.SetAttribute
-    - UnityEditor.VFX.Operator.AgeOverLifetime
-    - UnityEditor.VFX.Operator.SampleCurve
-    - UnityEditor.VFX.Operator.SampleGradient
     - UnityEditor.VFX.UI.VFXViewWindow
-    - UnityEditor.VFX.VFXBasicInitialize
-    - UnityEditor.VFX.VFXBasicSpawner
-    - UnityEditor.VFX.VFXBasicUpdate
-    - UnityEditor.VFX.VFXDataParticle
-    - UnityEditor.VFX.VFXDataSpawner
-    - UnityEditor.VFX.VFXGraph
-    - UnityEditor.VFX.VFXMeshOutput
-    - UnityEditor.VFX.VFXSlot
-    - UnityEditor.VFX.VFXSlotAnimationCurve
-    - UnityEditor.VFX.VFXSlotColor
-    - UnityEditor.VFX.VFXSlotFloat
-    - UnityEditor.VFX.VFXSlotFloat3
-    - UnityEditor.VFX.VFXSlotFloat4
-    - UnityEditor.VFX.VFXSlotGradient
-    - UnityEditor.VFX.VFXSlotInt
-    - UnityEditor.VFX.VFXSlotMesh
-    - UnityEditor.VFX.VFXSlotUint
-    - UnityEditor.VFX.VFXSlotVector
-    - UnityEditor.VFX.VFXSpawnerConstantRate
-    - UnityEditor.VFX.VFXSpawnerCustomWrapper
-    - UnityEditor.VFX.VFXUI
     Unity.VisualEffectGraph.Runtime.dll:
     - UnityEngine.VFX.LoopAndDelay
     Unity.XR.Management.Editor.dll:
@@ -314,85 +287,87 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 6094}
     - Class: 114
-      Script: {instanceID: 6344}
+      Script: {instanceID: 6100}
     - Class: 114
-      Script: {instanceID: 6724}
+      Script: {instanceID: 6346}
     - Class: 114
       Script: {instanceID: 6726}
     - Class: 114
-      Script: {instanceID: 6752}
+      Script: {instanceID: 6728}
     - Class: 114
-      Script: {instanceID: 6764}
+      Script: {instanceID: 6754}
     - Class: 114
-      Script: {instanceID: 6834}
+      Script: {instanceID: 6766}
     - Class: 114
-      Script: {instanceID: 6854}
+      Script: {instanceID: 6836}
     - Class: 114
-      Script: {instanceID: 6896}
+      Script: {instanceID: 6856}
     - Class: 114
-      Script: {instanceID: 7024}
+      Script: {instanceID: 6898}
     - Class: 114
-      Script: {instanceID: 7142}
+      Script: {instanceID: 7026}
     - Class: 114
       Script: {instanceID: 7144}
     - Class: 114
       Script: {instanceID: 7146}
     - Class: 114
-      Script: {instanceID: 7172}
+      Script: {instanceID: 7148}
     - Class: 114
-      Script: {instanceID: 7526}
+      Script: {instanceID: 7174}
     - Class: 114
-      Script: {instanceID: 7682}
+      Script: {instanceID: 7528}
     - Class: 114
-      Script: {instanceID: 7854}
+      Script: {instanceID: 7684}
     - Class: 114
-      Script: {instanceID: 7870}
+      Script: {instanceID: 7856}
     - Class: 114
-      Script: {instanceID: 7936}
+      Script: {instanceID: 7872}
     - Class: 114
-      Script: {instanceID: 7964}
+      Script: {instanceID: 7938}
     - Class: 114
-      Script: {instanceID: 7992}
+      Script: {instanceID: 7966}
     - Class: 114
-      Script: {instanceID: 8126}
+      Script: {instanceID: 7994}
     - Class: 114
-      Script: {instanceID: 8180}
+      Script: {instanceID: 8128}
     - Class: 114
-      Script: {instanceID: 8230}
+      Script: {instanceID: 8182}
     - Class: 114
-      Script: {instanceID: 8328}
+      Script: {instanceID: 8232}
     - Class: 114
-      Script: {instanceID: 8342}
+      Script: {instanceID: 8330}
     - Class: 114
-      Script: {instanceID: 8358}
+      Script: {instanceID: 8344}
     - Class: 114
-      Script: {instanceID: 8456}
+      Script: {instanceID: 8360}
     - Class: 114
-      Script: {instanceID: 8498}
+      Script: {instanceID: 8458}
     - Class: 114
-      Script: {instanceID: 8686}
+      Script: {instanceID: 8500}
     - Class: 114
-      Script: {instanceID: 8782}
+      Script: {instanceID: 8688}
     - Class: 114
-      Script: {instanceID: 8846}
+      Script: {instanceID: 8784}
     - Class: 114
-      Script: {instanceID: 9078}
+      Script: {instanceID: 8848}
     - Class: 114
-      Script: {instanceID: 9298}
+      Script: {instanceID: 9080}
     - Class: 114
-      Script: {instanceID: 9758}
+      Script: {instanceID: 9300}
     - Class: 114
-      Script: {instanceID: 9804}
+      Script: {instanceID: 9760}
     - Class: 114
-      Script: {instanceID: 9972}
+      Script: {instanceID: 9806}
     - Class: 114
-      Script: {instanceID: 10122}
+      Script: {instanceID: 9974}
     - Class: 114
-      Script: {instanceID: 10174}
+      Script: {instanceID: 10124}
     - Class: 114
-      Script: {instanceID: 10514}
+      Script: {instanceID: 10176}
     - Class: 114
-      Script: {instanceID: 10606}
+      Script: {instanceID: 10516}
+    - Class: 114
+      Script: {instanceID: 10608}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -786,7 +761,7 @@ ScriptsOnlyBuild:
     className: GrabbableCollisionHaptics
   - hash:
       serializedVersion: 2
-      Hash: cdadbaeec9f5a1dbebe74a0b362ce174
+      Hash: 170268bf388da518b5909f078911f0c9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: controlSlides
@@ -2062,6 +2037,12 @@ ScriptsOnlyBuild:
     assemblyName: Oculus.Spatializer.dll
     namespaceName: 
     className: ONSPSettings
+  - hash:
+      serializedVersion: 2
+      Hash: d8fd91d7da66704ba7e15001c72ce4b7
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: urineBottle
   - hash:
       serializedVersion: 2
       Hash: 0498232dd48b097128db9129acff161b
@@ -3865,4 +3846,4 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/mkv/Scenes/testNewENV2.unity
-  playerPath: C:/Users/Miles/Desktop/platform-tools_r33.0.1-windows/platform-tools/inpactsBuild_6-08.apk
+  playerPath: C:/Users/Miles/Desktop/platform-tools_r33.0.1-windows/platform-tools/inpactsBuild_6-15.apk

@@ -4776,7 +4776,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 475602833}
   m_LocalRotation: {x: -0.54329014, y: -0.452588, z: -0.452588, w: 0.54329014}
-  m_LocalPosition: {x: -1.843, y: 4.32813, z: 10.651}
+  m_LocalPosition: {x: -1.554, y: 4.32813, z: 10.598}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 887446783}
@@ -10799,8 +10799,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.06852464, y: 1.0624579, z: 0.009076427}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.12844992, y: 1.0624579, z: 0.02926629}
+  m_Center: {x: -0.00093364716, y: 5.0396872e-17, z: -0.01917136}
 --- !u!54 &1373945359
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10948,7 +10948,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.15
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1383976273
 MonoBehaviour:
@@ -11812,6 +11812,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9084b72ce49ee6145b883bd946a9d20f,
         type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9084b72ce49ee6145b883bd946a9d20f,
+        type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -11980,7 +11985,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: d76b4e6f3d9c9284c969464855bbbae1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.946
+      value: 4.082
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d76b4e6f3d9c9284c969464855bbbae1,
         type: 3}
@@ -12031,6 +12036,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: urine bottle
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d76b4e6f3d9c9284c969464855bbbae1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d76b4e6f3d9c9284c969464855bbbae1, type: 3}
@@ -12088,8 +12098,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.20000002, y: 0.41217974, z: 0.20000003}
-  m_Center: {x: 0, y: -0.03932838, z: 0}
+  m_Size: {x: 0.3, y: 0.61826956, z: 0.30000004}
+  m_Center: {x: 0, y: -0.05899258, z: 0}
 --- !u!54 &1527058580
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14387,6 +14397,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: test2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d76b4e6f3d9c9284c969464855bbbae1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d76b4e6f3d9c9284c969464855bbbae1, type: 3}

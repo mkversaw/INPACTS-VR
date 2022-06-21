@@ -12,12 +12,14 @@ public class gloveBox : MonoBehaviour
     //public Material gloveMat;
     public Texture gloveTex;
 
-    private bool hasGloves = false;
+    [System.NonSerialized]  public bool highlighted = false;
+
+    [System.NonSerialized]  public bool hasGloves = false;
 
     // Detect if object enters the gbox collider
     private void OnTriggerEnter(Collider other) // MAKE SURE THE COLLIDER ON THE GBOX IS SET TO "TRIGGER"!
     {
-        if ( (other.gameObject.name == leftCollider.name || other.gameObject.name == rightCollider.name ) && !hasGloves && gameObject.GetComponent<highlight2>().isHighlighted) // make sure object entering is the hands, and dont already have gloves
+        if ( (other.gameObject.name == leftCollider.name || other.gameObject.name == rightCollider.name ) && !hasGloves && highlighted) // make sure object entering is the hands, and dont already have gloves
         {
             GameObject manager = GameObject.FindGameObjectWithTag("Manager");
             manager.GetComponent<createSmoke>().spawnSmoke(gameObject.transform);
@@ -29,6 +31,7 @@ public class gloveBox : MonoBehaviour
             meshRendererLeft.material.mainTexture = gloveTex; // set lefthand texture
             meshRendererRight.material.mainTexture = gloveTex; // set righthand texture
 
+            highlighted = false;
             hasGloves = true;
             gameObject.GetComponent<highlight2>().unhighlightObj(); // remove highlight
             manager.GetComponent<controlSlides>().hasGloves = true;

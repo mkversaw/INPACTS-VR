@@ -19,6 +19,7 @@ TagManager:
   - No collide
   - Hands
   - Snap
+  - urine stick
   - 
   - 
   - 
@@ -36,8 +37,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - Hand
   - HandPlayer
   - Grabbable
   - Grabbing
