@@ -6,7 +6,9 @@ public class gloveBox : MonoBehaviour
 {
 
     public GameObject handLeft;
+    public GameObject handLeftFist;
     public GameObject handRight;
+    public GameObject handRightFist;
     public GameObject leftCollider;
     public GameObject rightCollider;
     //public Material gloveMat;
@@ -30,6 +32,9 @@ public class gloveBox : MonoBehaviour
 
             meshRendererLeft.material.mainTexture = gloveTex; // set lefthand texture
             meshRendererRight.material.mainTexture = gloveTex; // set righthand texture
+
+            handLeftFist.GetComponent<SkinnedMeshRenderer>().material.mainTexture = gloveTex;
+            handRightFist.GetComponent<SkinnedMeshRenderer>().material.mainTexture = gloveTex;
 
             highlighted = false;
             hasGloves = true;

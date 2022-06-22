@@ -8,6 +8,8 @@ TagManager:
   - Lancet
   - Glucometer
   - Test strip
+  - Left Hand
+  - Right Hand
   layers:
   - Default
   - TransparentFX

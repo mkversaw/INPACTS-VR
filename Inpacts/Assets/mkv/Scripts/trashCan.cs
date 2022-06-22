@@ -6,7 +6,9 @@ public class trashCan : MonoBehaviour
 {
 
     public GameObject leftHandRef;
+    public GameObject handLeftFist;
     public GameObject rightHandRef;
+    public GameObject handRightFist;
     public GameObject leftCollider;
     public GameObject rightCollider;
 
@@ -42,6 +44,8 @@ public class trashCan : MonoBehaviour
                 {
                     leftHandRef.GetComponent<SkinnedMeshRenderer>().material.mainTexture = handTex;
                     rightHandRef.GetComponent<SkinnedMeshRenderer>().material.mainTexture = handTex;
+                    handLeftFist.GetComponent<SkinnedMeshRenderer>().material.mainTexture = handTex;
+                    handRightFist.GetComponent<SkinnedMeshRenderer>().material.mainTexture = handTex;
 
                     manager.GetComponent<createSmoke>().spawnSmoke(other.transform);
 
