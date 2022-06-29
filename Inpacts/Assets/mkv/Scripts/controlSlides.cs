@@ -19,6 +19,7 @@ public class controlSlides : MonoBehaviour
     [SerializeField] private GameObject prickSiteRef;
     [SerializeField] private GameObject sharpsBinRef;
     [SerializeField] private GameObject trashCanRef;
+    [SerializeField] private GameObject tvRef;
 
     [SerializeField] private GameObject urineStripRef;
     [SerializeField] private GameObject urineBottleRef;
@@ -43,6 +44,7 @@ public class controlSlides : MonoBehaviour
     [System.NonSerialized] public bool lancetTouched = false; // has the lancet been prepped?
     [System.NonSerialized] public bool pricked = false; // has the patient been pricked?
 
+    private int sharpsTrashCount = 0;
     void Start()
     {
         backSlide = currSlide;
@@ -101,6 +103,8 @@ public class controlSlides : MonoBehaviour
     {
         GameObject.Find("CenterEyeAnchor").GetComponent<OVRScreenFade>().FadeOut();
         yield return new WaitForSeconds(t);
+
+        animControlRef.GetComponent<patient2>().playIdle();
 
         GetComponent<clearObjects>().clear(); // clear out un-needed objects from the table e.g. the glucometer
 
@@ -236,12 +240,13 @@ public class controlSlides : MonoBehaviour
 
             case 12:
 
-                StartCoroutine(UrineTransition(3.0f));
+                
 
                 break;
 
             case 13:
 
+                StartCoroutine(UrineTransition(3.0f));
                 gloveBoxRef.GetComponent<gloveBox>().highlighted = true;
                 gloveBoxRef.GetComponent<gloveBox>().hasGloves = false;
                 disableNext();
@@ -250,15 +255,24 @@ public class controlSlides : MonoBehaviour
 
             case 14:
 
+
                 urineBottleRef.GetComponent<urineBottle>().urineEnable();
                 urineStripRef.GetComponent<highlight2>().highlightObj(1);
-               
+
                 disableNext();
+
+
 
                 break;
 
             case 15:
 
+                urineSTRIPBottleRef.GetComponent<highlight2>().highlightObj();
+                disableNext();
+
+                break;
+
+            case 16:
 
                 trashCanRef.GetComponent<trashCan>().round2Checks(); // enable urine stuff checks etc from the trash can
                 trashCanRef.GetComponent<highlight2>().highlightObj(); // highlight the trashCan
@@ -267,15 +281,17 @@ public class controlSlides : MonoBehaviour
 
                 break;
 
-            case 16:
-
-                break;
-
             case 17:
+
+                
+                // water bottle etc ?
 
                 break;
 
             case 18:
+
+                tvRef.SetActive(true);
+                disableNext();
 
                 break;
 
@@ -296,7 +312,7 @@ public class controlSlides : MonoBehaviour
             prevRef.interactable = true;
             managerRef.GetComponent<controlSound>().Play("click"); // play button click noise
 
-            if (currSlide == slides.Count - 1) // if on the last slide
+            if (currSlide == slides.Count - 2) // if on the last slide
             {
                 if (backSlide == currSlide)
                 {
@@ -360,6 +376,15 @@ public class controlSlides : MonoBehaviour
             slides[backSlide].SetActive(false); // disable the current slide
             backSlide--; // decrement backSlide counter
             slides[backSlide].SetActive(true); // enable the previous slide
+        }
+    }
+
+    public void sharpsTrash()
+    {
+        sharpsTrashCount++;
+        if(sharpsTrashCount == 2)
+        {
+            enableNext();
         }
     }
 

@@ -12,6 +12,7 @@ public class highlight2 : MonoBehaviour
 	public bool isHighlighted = false;
 
 	private int specialVar = 0;
+	private Color specialTemp;
 
 	public void highlightObj(int special = 0)
 	{
@@ -32,19 +33,21 @@ public class highlight2 : MonoBehaviour
 		foreach (Renderer r in components) // iterate through those materials
 		{
 			rends.Add(r);
-			Material r2;
 			if (special == 0)
 			{
 				print(gameObject.name);
-				r2 = new Material(r.material);
+				Material r2 = new Material(r.material);
+				oldMats.Add(r2);
 			} else
 			{
 				print("special!");
 				print(r.materials.Length);
 				print(gameObject.name);
-				r2 = new Material(r.materials[1]);
+				specialTemp = r.materials[1].color;
+				Material r2 = new Material(r.materials[1]);
+				oldMats.Add(r2);
 			}
-			oldMats.Add(r2);
+			
 
 		}
 		StartCoroutine(FlashObj());
@@ -68,7 +71,10 @@ public class highlight2 : MonoBehaviour
 				oldMats.RemoveAt(0);
 			} else
 			{
-				r.materials[1] = oldMats[0]; // dequeue and set r to the original material
+				//print(r.materials.Length);
+				//print(oldMats.Count);
+				//r.materials[1] = oldMats[0]; // dequeue and set r to the original material
+				r.materials[1].color = specialTemp;
 				oldMats.RemoveAt(0);
 			}
 		}

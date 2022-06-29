@@ -24,13 +24,14 @@ public class TVSlides : MonoBehaviour
 
 	public void nextSlide()
 	{
+		print("next tv");
 		if (currSlide < slides.Count)
 		{
 			managerRef.GetComponent<controlSound>().Play("click"); // play button click noise
 
 			prevRef.interactable = true; // make PREV arrow enabled
 
-			if (currSlide == slides.Count - 1) // last slide
+			if (currSlide == slides.Count - 2) // last slide
 			{
 				nextRef.interactable = false; // gray the button out
 				managerRef.GetComponent<controlSlides>().enableNext(); // update status in manager
@@ -46,7 +47,7 @@ public class TVSlides : MonoBehaviour
 
 	public void prevSlide()
 	{
-
+		print("prev tv");
 		if (currSlide > 0)
 		{
 			managerRef.GetComponent<controlSound>().Play("click"); // play button click noise

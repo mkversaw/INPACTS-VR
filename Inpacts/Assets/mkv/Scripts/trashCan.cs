@@ -39,8 +39,7 @@ public class trashCan : MonoBehaviour
 
     public void round2Checks()
     {
-        wasHighlighted = false;
-        hasGloves = false;
+        hasGloves = true;
         round2 = true;
     }
     private void OnTriggerEnter(Collider other)
@@ -65,39 +64,48 @@ public class trashCan : MonoBehaviour
                     TryMoveOn();
 
                 }
-            } else if (other.gameObject == testStripRef)
+            } else if (other.gameObject == testStripRef && !deletedStrip)
             {
                 wasHighlighted = true;
                 gameObject.GetComponent<highlight2>().unhighlightObj(); // remove highlight
 
-                testStripRef.SetActive(false);
+                //testStripRef.SetActive(false);
+                deleteGrabbed(testStripRef);
+
                 deletedStrip = true;
                 manager.GetComponent<createSmoke>().spawnSmoke(gameObject.transform);
                 TryMoveOn();
             } else if (other.gameObject == lancetCapRef)
             {
-                wasHighlighted = true;
-                gameObject.GetComponent<highlight2>().unhighlightObj(); // remove highlight
+                //wasHighlighted = true;
+                //gameObject.GetComponent<highlight2>().unhighlightObj(); // remove highlight
+                //
+                ////lancetCapRef.SetActive(false);
+                //deleteGrabbed(lancetCapRef);
+                //
+                //deletedCap = true;
+                //manager.GetComponent<createSmoke>().spawnSmoke(gameObject.transform);
+                //TryMoveOn();
 
-                lancetCapRef.SetActive(false);
-                deletedCap = true;
-                manager.GetComponent<createSmoke>().spawnSmoke(gameObject.transform);
-                TryMoveOn();
-            } else if (other.gameObject == urineStripRef)
+            } else if (other.gameObject == urineStripRef && round2 && !deletedUrineStrip)
             {
                 wasHighlighted = true;
                 gameObject.GetComponent<highlight2>().unhighlightObj(); // remove highlight
 
-                urineStripRef.SetActive(false);
+                //urineStripRef.SetActive(false);
+                deleteGrabbed(urineStripRef);
+
                 deletedUrineStrip = true;
                 manager.GetComponent<createSmoke>().spawnSmoke(gameObject.transform);
                 TryMoveOn();
-            } else if (other.gameObject == urineCupRef)
+            } else if (other.gameObject == urineCupRef && round2 && !deletedUrineCup)
             {
                 wasHighlighted = true;
                 gameObject.GetComponent<highlight2>().unhighlightObj(); // remove highlight
 
-                urineCupRef.SetActive(false);
+                //urineCupRef.SetActive(false);
+                deleteGrabbed(urineCupRef);
+
                 deletedUrineCup = true;
                 manager.GetComponent<createSmoke>().spawnSmoke(gameObject.transform);
                 TryMoveOn();
@@ -112,10 +120,19 @@ public class trashCan : MonoBehaviour
             this.GetComponent<highlight2>().unhighlightObj(); // remove highlight
             GameObject.FindGameObjectWithTag("Manager").GetComponent<controlSlides>().enableNext(); // update status in manager!
         }
-        else if (!hasGloves && deletedStrip && deletedCap)
+        else if (!hasGloves && deletedStrip)
         {
             this.GetComponent<highlight2>().unhighlightObj(); // remove highlight
-            GameObject.FindGameObjectWithTag("Manager").GetComponent<controlSlides>().enableNext(); // update status in manager!
+            GameObject.FindGameObjectWithTag("Manager").GetComponent<controlSlides>().sharpsTrash();
         }
+    }
+
+    private void deleteGrabbed(GameObject obj) // this was honestly the best solution for deleting a held object, and it saddens me greatly
+    {
+        obj.transform.parent = null; // !
+        obj.GetComponent<Rigidbody>().isKinematic = true;
+        obj.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll; // make it immovable
+        obj.gameObject.transform.position = new Vector3(-100, -100, -100); // teleport it far away
+        obj.gameObject.transform.localScale = new Vector3(0.001f, 0.001f, 0.001f);
     }
 }

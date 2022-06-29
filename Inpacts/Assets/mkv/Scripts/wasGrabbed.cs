@@ -8,6 +8,8 @@ public class wasGrabbed : MonoBehaviour
     [System.NonSerialized] public bool grabbed = false;
     [System.NonSerialized] public bool highlighted = false;
 
+    public bool shouldMoveOn = false;
+
     // Update is called once per frame
     void Update()
     {
@@ -17,6 +19,11 @@ public class wasGrabbed : MonoBehaviour
             grabbed = true;
             GetComponent<highlight2>().unhighlightObj(); // remove highlight object
             highlighted = false;
+
+            if(shouldMoveOn)
+            {
+                GameObject.FindGameObjectWithTag("Manager").GetComponent<controlSlides>().enableNext(); // update status in manager
+            }
         }
        
     }
