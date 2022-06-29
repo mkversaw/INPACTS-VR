@@ -22,6 +22,7 @@ public class controlSlides : MonoBehaviour
 
     [SerializeField] private GameObject urineStripRef;
     [SerializeField] private GameObject urineBottleRef;
+    [SerializeField] private GameObject urineSTRIPBottleRef;
 
 
 
@@ -47,7 +48,14 @@ public class controlSlides : MonoBehaviour
         backSlide = currSlide;
         GameObject.Find("CenterEyeAnchor").GetComponent<OVRScreenFade>().FadeIn(); // start scene with a fade in effect
         slides[currSlide].SetActive(true); // enable the first slide
+
+        urineStripRef.SetActive(false);
+        urineSTRIPBottleRef.SetActive(false);
+
         slideEvent(currSlide);
+
+
+        
     }
 
     private void Update() // scuffed, need to redo this later!
@@ -79,12 +87,28 @@ public class controlSlides : MonoBehaviour
         GameObject.Find("CenterEyeAnchor").GetComponent<OVRScreenFade>().FadeIn();
     }
 
+
     IEnumerator Water(float t1, float t2)
     {
         GameObject.Find("CenterEyeAnchor").GetComponent<OVRScreenFade>().FadeOut();
         yield return new WaitForSeconds(t1);
         managerRef.GetComponent<controlSound>().Play("water"); // play water sound FX
         yield return new WaitForSeconds(t2);
+        GameObject.Find("CenterEyeAnchor").GetComponent<OVRScreenFade>().FadeIn();
+    }
+
+    IEnumerator UrineTransition(float t) // coroutine to fade screen out for 3 seconds then back in
+    {
+        GameObject.Find("CenterEyeAnchor").GetComponent<OVRScreenFade>().FadeOut();
+        yield return new WaitForSeconds(t);
+
+        GetComponent<clearObjects>().clear(); // clear out un-needed objects from the table e.g. the glucometer
+
+        urineStripRef.SetActive(true); // enable the urine strip object
+        urineSTRIPBottleRef.SetActive(true); // enable the urine strip bottle object
+
+        urineBottleRef.GetComponent<urineBottle>().initial(); // enable the urine sample and urine sample bottle
+
         GameObject.Find("CenterEyeAnchor").GetComponent<OVRScreenFade>().FadeIn();
     }
 
@@ -212,7 +236,7 @@ public class controlSlides : MonoBehaviour
 
             case 12:
 
-
+                StartCoroutine(UrineTransition(3.0f));
 
                 break;
 
@@ -226,15 +250,20 @@ public class controlSlides : MonoBehaviour
 
             case 14:
 
-                urineBottleRef.SetActive(true);
                 urineBottleRef.GetComponent<urineBottle>().urineEnable();
-
-                urineStripRef.GetComponent<highlight2>().highlightObj();
+                urineStripRef.GetComponent<highlight2>().highlightObj(1);
+               
                 disableNext();
 
                 break;
 
             case 15:
+
+
+                trashCanRef.GetComponent<trashCan>().round2Checks(); // enable urine stuff checks etc from the trash can
+                trashCanRef.GetComponent<highlight2>().highlightObj(); // highlight the trashCan
+
+                disableNext();
 
                 break;
 

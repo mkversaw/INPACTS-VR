@@ -11,8 +11,11 @@ public class highlight2 : MonoBehaviour
 	[SerializeField] private Material highlightMat;
 	public bool isHighlighted = false;
 
-	public void highlightObj()
+	private int specialVar = 0;
+
+	public void highlightObj(int special = 0)
 	{
+		specialVar = special;
 		if (isHighlighted)
 		{
 			return;
@@ -29,7 +32,18 @@ public class highlight2 : MonoBehaviour
 		foreach (Renderer r in components) // iterate through those materials
 		{
 			rends.Add(r);
-			Material r2 = new Material(r.material);
+			Material r2;
+			if (special == 0)
+			{
+				print(gameObject.name);
+				r2 = new Material(r.material);
+			} else
+			{
+				print("special!");
+				print(r.materials.Length);
+				print(gameObject.name);
+				r2 = new Material(r.materials[1]);
+			}
 			oldMats.Add(r2);
 
 		}
@@ -48,8 +62,15 @@ public class highlight2 : MonoBehaviour
 	
 		foreach (Renderer r in components) // iterate through those materials
 		{
-			r.material = oldMats[0]; // dequeue and set r to the original material
-			oldMats.RemoveAt(0);
+			if (specialVar == 0)
+			{
+				r.material = oldMats[0]; // dequeue and set r to the original material
+				oldMats.RemoveAt(0);
+			} else
+			{
+				r.materials[1] = oldMats[0]; // dequeue and set r to the original material
+				oldMats.RemoveAt(0);
+			}
 		}
 		rends.Clear();
 	}
@@ -61,7 +82,14 @@ public class highlight2 : MonoBehaviour
 		{
 			for (int i = 0; i < rends.Count; i++) // for each renderer material
 			{
-				rends[i].material.color = Color.Lerp(oldMats[i].color, target, Mathf.PingPong(Time.time, 1.5f)); // linear interpolate between original color and highlighted color
+				if(specialVar == 0)
+				{
+					rends[i].material.color = Color.Lerp(oldMats[i].color, target, Mathf.PingPong(Time.time, 1.5f)); // linear interpolate between original color and highlighted color
+				} else
+				{
+					rends[i].materials[1].color = Color.Lerp(oldMats[i].color, target, Mathf.PingPong(Time.time, 1.5f)); // linear interpolate between original color and highlighted color
+				}
+				
 			}
 
 			yield return new WaitForSeconds(0.05f);

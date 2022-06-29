@@ -6,16 +6,25 @@ public class urineBottle : MonoBehaviour
 {
 	[SerializeField] private GameObject urineStripRef;
 	[SerializeField] private GameObject urineBottleRef;
+	[SerializeField] private GameObject parentRef;
 
 	private bool touchedUrine = false;
 
 	private void Start()
 	{
+		parentRef.SetActive(false);
 		gameObject.SetActive(false);
 	}
 
+	public void initial()
+	{
+		parentRef.SetActive(true);
+		gameObject.SetActive(true);
+	}
 	public void urineEnable()
 	{
+		parentRef.SetActive(true);
+		gameObject.SetActive(true);
 		urineBottleRef.GetComponent<highlight2>().highlightObj();
 	}
 	private void OnTriggerEnter(Collider other)

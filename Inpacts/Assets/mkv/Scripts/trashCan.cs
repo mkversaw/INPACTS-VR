@@ -14,6 +14,8 @@ public class trashCan : MonoBehaviour
 
     [System.NonSerialized] public bool hasGloves = true;
     [System.NonSerialized] public bool deletedStrip = false;
+    [System.NonSerialized] public bool deletedUrineStrip = false;
+    [System.NonSerialized] public bool deletedUrineCup = false;
     [System.NonSerialized] public bool deletedCap = true;
 
     private Texture handTex;
@@ -21,9 +23,13 @@ public class trashCan : MonoBehaviour
 
     public GameObject testStripRef;
     public GameObject lancetCapRef;
+    public GameObject urineStripRef;
+    public GameObject urineCupRef;
+
     private GameObject manager;
 
-    bool wasHighlighted = false;
+    private bool wasHighlighted = false;
+    private bool round2 = false;
 
     void Start()
     {
@@ -31,6 +37,12 @@ public class trashCan : MonoBehaviour
         manager = GameObject.FindGameObjectWithTag("Manager");
     }
 
+    public void round2Checks()
+    {
+        wasHighlighted = false;
+        hasGloves = false;
+        round2 = true;
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (this.GetComponent<highlight2>().isHighlighted || wasHighlighted) // only delete if highlighted
@@ -71,13 +83,36 @@ public class trashCan : MonoBehaviour
                 deletedCap = true;
                 manager.GetComponent<createSmoke>().spawnSmoke(gameObject.transform);
                 TryMoveOn();
+            } else if (other.gameObject == urineStripRef)
+            {
+                wasHighlighted = true;
+                gameObject.GetComponent<highlight2>().unhighlightObj(); // remove highlight
+
+                urineStripRef.SetActive(false);
+                deletedUrineStrip = true;
+                manager.GetComponent<createSmoke>().spawnSmoke(gameObject.transform);
+                TryMoveOn();
+            } else if (other.gameObject == urineCupRef)
+            {
+                wasHighlighted = true;
+                gameObject.GetComponent<highlight2>().unhighlightObj(); // remove highlight
+
+                urineCupRef.SetActive(false);
+                deletedUrineCup = true;
+                manager.GetComponent<createSmoke>().spawnSmoke(gameObject.transform);
+                TryMoveOn();
             }
         }
     }
 
     private void TryMoveOn()
     {
-        if (!hasGloves && deletedStrip && deletedCap)
+        if(round2 && !hasGloves && deletedUrineCup && deletedUrineStrip)
+        {
+            this.GetComponent<highlight2>().unhighlightObj(); // remove highlight
+            GameObject.FindGameObjectWithTag("Manager").GetComponent<controlSlides>().enableNext(); // update status in manager!
+        }
+        else if (!hasGloves && deletedStrip && deletedCap)
         {
             this.GetComponent<highlight2>().unhighlightObj(); // remove highlight
             GameObject.FindGameObjectWithTag("Manager").GetComponent<controlSlides>().enableNext(); // update status in manager!
