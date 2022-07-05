@@ -2740,6 +2740,8 @@ MonoBehaviour:
     name: water
   - clip: {fileID: 8300000, guid: 0411b3a27d7995a4495ab90babd41283, type: 3}
     name: completed
+  - clip: {fileID: 8300000, guid: bf753d2882c9b1e4199f38e375721ea4, type: 3}
+    name: whoosh
   source: {fileID: 232235416}
 --- !u!114 &329673895
 MonoBehaviour:
