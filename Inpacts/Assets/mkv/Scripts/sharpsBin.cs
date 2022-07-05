@@ -22,7 +22,7 @@ public class sharpsBin : MonoBehaviour
             deleteGrabbed(lanceRef);
             GameObject.FindGameObjectWithTag("Manager").GetComponent<createSmoke>().spawnSmoke(gameObject.transform);
             GameObject.FindGameObjectWithTag("Manager").GetComponent<controlSlides>().sharpsTrash();
-
+            GameObject.FindGameObjectWithTag("Manager").GetComponent<controlSound>().Play("whoosh");
             //print(rightHand.GetComponent<OVRGrabber>().grabbedObject.gameObject.name);
 
             //lanceRef.SetActive(false);

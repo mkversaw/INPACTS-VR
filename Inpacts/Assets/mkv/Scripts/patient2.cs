@@ -66,12 +66,12 @@ public class patient2 : MonoBehaviour
     public void playCottonBall()
     {
         print("playing cotton grab");
-
+        cottonBallAnim.SetTrigger("playCottonBall"); // have cotton ball move with it
         //anim.ResetTrigger("playIdle");
         anim.ResetTrigger("playArm");
 
         anim.SetTrigger("playCottonBall");
-        cottonBallAnim.SetTrigger("playCottonBall"); // have cotton ball move with it
+        
 
         anim.SetBool("isIdle", false);
     }

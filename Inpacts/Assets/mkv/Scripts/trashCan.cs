@@ -59,7 +59,7 @@ public class trashCan : MonoBehaviour
                     handRightFist.GetComponent<SkinnedMeshRenderer>().material.mainTexture = handTex;
 
                     manager.GetComponent<createSmoke>().spawnSmoke(other.transform);
-
+                    GameObject.FindGameObjectWithTag("Manager").GetComponent<controlSound>().Play("whoosh");
                     hasGloves = false;
                     TryMoveOn();
 
@@ -71,7 +71,7 @@ public class trashCan : MonoBehaviour
 
                 //testStripRef.SetActive(false);
                 deleteGrabbed(testStripRef);
-
+                GameObject.FindGameObjectWithTag("Manager").GetComponent<controlSound>().Play("whoosh");
                 deletedStrip = true;
                 manager.GetComponent<createSmoke>().spawnSmoke(gameObject.transform);
                 TryMoveOn();
@@ -94,7 +94,7 @@ public class trashCan : MonoBehaviour
 
                 //urineStripRef.SetActive(false);
                 deleteGrabbed(urineStripRef);
-
+                GameObject.FindGameObjectWithTag("Manager").GetComponent<controlSound>().Play("whoosh");
                 deletedUrineStrip = true;
                 manager.GetComponent<createSmoke>().spawnSmoke(gameObject.transform);
                 TryMoveOn();
@@ -102,7 +102,7 @@ public class trashCan : MonoBehaviour
             {
                 wasHighlighted = true;
                 gameObject.GetComponent<highlight2>().unhighlightObj(); // remove highlight
-
+                GameObject.FindGameObjectWithTag("Manager").GetComponent<controlSound>().Play("whoosh");
                 //urineCupRef.SetActive(false);
                 deleteGrabbed(urineCupRef);
 
