@@ -312,7 +312,7 @@ public class controlSlides : MonoBehaviour
             prevRef.interactable = true;
             managerRef.GetComponent<controlSound>().Play("click"); // play button click noise
 
-            if (currSlide == slides.Count - 2) // if on the last slide
+            if (currSlide == slides.Count - 1) // if on the last slide
             {
                 if (backSlide == currSlide)
                 {
