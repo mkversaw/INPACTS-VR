@@ -20,6 +20,7 @@ public class controlSlides : MonoBehaviour
     [SerializeField] private GameObject sharpsBinRef;
     [SerializeField] private GameObject trashCanRef;
     [SerializeField] private GameObject tvRef;
+    [SerializeField] private GameObject fadeCanvasRef;
 
     [SerializeField] private GameObject urineStripRef;
     [SerializeField] private GameObject urineBottleRef;
@@ -45,6 +46,7 @@ public class controlSlides : MonoBehaviour
     [System.NonSerialized] public bool pricked = false; // has the patient been pricked?
 
     private int sharpsTrashCount = 0;
+    private int fadeTextCounter = 0;
     void Start()
     {
         backSlide = currSlide;
@@ -94,9 +96,14 @@ public class controlSlides : MonoBehaviour
     {
         GameObject.Find("CenterEyeAnchor").GetComponent<OVRScreenFade>().FadeOut();
         yield return new WaitForSeconds(t1);
+
+        fadeCanvasRef.GetComponent<projectText>().alterText(fadeTextCounter, true);
+
         managerRef.GetComponent<controlSound>().Play("water"); // play water sound FX
         yield return new WaitForSeconds(t2);
         GameObject.Find("CenterEyeAnchor").GetComponent<OVRScreenFade>().FadeIn();
+
+        fadeCanvasRef.GetComponent<projectText>().alterText(fadeTextCounter++, false); // increment fade text counter here
     }
 
     IEnumerator UrineTransition(float t) // coroutine to fade screen out for 3 seconds then back in
@@ -106,6 +113,8 @@ public class controlSlides : MonoBehaviour
 
         animControlRef.GetComponent<patient2>().playIdle();
 
+        fadeCanvasRef.GetComponent<projectText>().alterText(fadeTextCounter, true);
+
         GetComponent<clearObjects>().clear(); // clear out un-needed objects from the table e.g. the glucometer
 
         urineStripRef.SetActive(true); // enable the urine strip object
@@ -114,6 +123,8 @@ public class controlSlides : MonoBehaviour
         urineBottleRef.GetComponent<urineBottle>().initial(); // enable the urine sample and urine sample bottle
 
         GameObject.Find("CenterEyeAnchor").GetComponent<OVRScreenFade>().FadeIn();
+
+        fadeCanvasRef.GetComponent<projectText>().alterText(fadeTextCounter++, false); // increment fade text counter here
     }
 
 
@@ -154,15 +165,15 @@ public class controlSlides : MonoBehaviour
 
         switch(i)
         {
-            case 2:
+            case 3:
                 playExampleRef.gameObject.SetActive(true); // play voice line of example intro
                 break;
 
-            case 3: // introducing yourself to patient
+            case 4: // introducing yourself to patient
                 playExampleRef.gameObject.SetActive(false);
                 break;
 
-            case 4: // washing hands
+            case 5: // washing hands
 
                 if (!disableWater)
                 {
@@ -175,12 +186,12 @@ public class controlSlides : MonoBehaviour
 
                 break;
 
-            case 5: // put on gloves
+            case 6: // put on gloves
 
                 
                 break;
 
-            case 6: // patient washes their hands
+            case 7: // patient washes their hands
 
                 if (!disableWater)
                 {
@@ -193,7 +204,7 @@ public class controlSlides : MonoBehaviour
 
                 break;
 
-            case 7: // prepare glucose monitor
+            case 8: // prepare glucose monitor
 
 
                 lancetRef.GetComponent<highlight2>().highlightObj();
@@ -201,7 +212,7 @@ public class controlSlides : MonoBehaviour
 
                 break;
 
-            case 8: // prepare lancet
+            case 9: // prepare lancet
 
                 //playExampleRef.gameObject.SetActive(true); // enable example for voiceline of asking patient to position their hand
 
@@ -211,21 +222,21 @@ public class controlSlides : MonoBehaviour
 
                 break;
 
-            case 9: // prick finger
+            case 10: // prick finger
 
 
                 disableNext(); // cant move on until task is done
 
                 break;
 
-            case 10:
+            case 11:
 
                 //gloveBoxRef.GetComponent<gloveBox>().highlighted = true;
                 //gloveBoxRef.GetComponent<gloveBox>().hasGloves = true;
 
                 break;
 
-            case 11:
+            case 12:
 
                 trashCanRef.GetComponent<highlight2>().highlightObj(); // highlight the trashCan
 
@@ -238,13 +249,13 @@ public class controlSlides : MonoBehaviour
                 break;
 
 
-            case 12:
+            case 13:
 
                 
 
                 break;
 
-            case 13:
+            case 14:
 
                 StartCoroutine(UrineTransition(3.0f));
                 gloveBoxRef.GetComponent<gloveBox>().highlighted = true;
@@ -253,7 +264,7 @@ public class controlSlides : MonoBehaviour
 
                 break;
 
-            case 14:
+            case 15:
 
 
                 urineBottleRef.GetComponent<urineBottle>().urineEnable();
@@ -265,14 +276,14 @@ public class controlSlides : MonoBehaviour
 
                 break;
 
-            case 15:
+            case 16:
 
                 urineSTRIPBottleRef.GetComponent<highlight2>().highlightObj();
                 disableNext();
 
                 break;
 
-            case 16:
+            case 17:
 
                 trashCanRef.GetComponent<trashCan>().round2Checks(); // enable urine stuff checks etc from the trash can
                 trashCanRef.GetComponent<highlight2>().highlightObj(); // highlight the trashCan
@@ -281,21 +292,21 @@ public class controlSlides : MonoBehaviour
 
                 break;
 
-            case 17:
+            case 18:
 
                 
                 // water bottle etc ?
 
                 break;
 
-            case 18:
+            case 19:
 
                 tvRef.SetActive(true);
                 disableNext();
 
                 break;
 
-            case 19:
+            case 20:
 
                 break;
 
