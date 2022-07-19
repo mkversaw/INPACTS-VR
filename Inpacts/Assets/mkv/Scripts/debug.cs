@@ -17,12 +17,12 @@ public class debug : MonoBehaviour
             if (OVRInput.GetDown(OVRInput.Button.One))
             {
                 print("FADING IN");
-                GameObject.Find("CenterEyeAnchor").GetComponent<OVRScreenFade>().FadeIn();
+                //GameObject.Find("CenterEyeAnchor").GetComponent<OVRScreenFade>().FadeIn();
             }
             else if (OVRInput.GetDown(OVRInput.Button.Two))
             {
                 print("FADING OUT");
-                GameObject.Find("CenterEyeAnchor").GetComponent<OVRScreenFade>().FadeOut();
+                //GameObject.Find("CenterEyeAnchor").GetComponent<OVRScreenFade>().FadeOut();
             }
         }
     }

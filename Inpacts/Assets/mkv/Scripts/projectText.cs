@@ -15,7 +15,9 @@ public class projectText : MonoBehaviour
 	}
 	public void alterText(int n, bool show = true)
 	{
-		if(n > 0 && n < textboxes.Length)
+		print("n: " + n);
+		print("length: " + textboxes.Length);
+		if(n >= 0 && n < textboxes.Length)
 		{
 			for(int i = 0; i < textboxes.Length; i++)
 			{
@@ -35,6 +37,9 @@ public class projectText : MonoBehaviour
 					}
 				}
 			}
+		} else
+		{
+			print("invalid index!");
 		}
 	}
 

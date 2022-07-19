@@ -9,10 +9,11 @@ public class testStrip : MonoBehaviour
     [SerializeField] private GameObject textRef;
     [SerializeField] private GameObject thisRef; // ???
 
+    public bool canTouch = false;
     bool touchedBlood = false;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject == bloodRef && !touchedBlood)
+        if (other.gameObject == bloodRef && !touchedBlood && canTouch)
         {
             print("test strip touched blood!");
             thisRef.GetComponent<basemapSequencer>().startSequence();

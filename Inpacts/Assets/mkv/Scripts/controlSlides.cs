@@ -122,9 +122,11 @@ public class controlSlides : MonoBehaviour
 
         urineBottleRef.GetComponent<urineBottle>().initial(); // enable the urine sample and urine sample bottle
 
+        yield return new WaitForSeconds(t);
+
         GameObject.Find("CenterEyeAnchor").GetComponent<OVRScreenFade>().FadeIn();
 
-        fadeCanvasRef.GetComponent<projectText>().alterText(fadeTextCounter++, false); // increment fade text counter here
+        fadeCanvasRef.GetComponent<projectText>().alterText(fadeTextCounter, false); // increment fade text counter here
     }
 
 
@@ -165,12 +167,16 @@ public class controlSlides : MonoBehaviour
 
         switch(i)
         {
+            case 1:
+                managerRef.GetComponent<controlSound>().Play("intro"); // play the intro
+                break;
+
             case 3:
-                playExampleRef.gameObject.SetActive(true); // play voice line of example intro
+                //playExampleRef.gameObject.SetActive(true); // play voice line of example intro
                 break;
 
             case 4: // introducing yourself to patient
-                playExampleRef.gameObject.SetActive(false);
+                //playExampleRef.gameObject.SetActive(false);
                 break;
 
             case 5: // washing hands
@@ -224,7 +230,7 @@ public class controlSlides : MonoBehaviour
 
             case 10: // prick finger
 
-
+                testStripRef.GetComponent<testStrip>().canTouch = true; // !!!!!!!!!!
                 disableNext(); // cant move on until task is done
 
                 break;
@@ -257,7 +263,7 @@ public class controlSlides : MonoBehaviour
 
             case 14:
 
-                StartCoroutine(UrineTransition(3.0f));
+                StartCoroutine(UrineTransition(4.0f));
                 gloveBoxRef.GetComponent<gloveBox>().highlighted = true;
                 gloveBoxRef.GetComponent<gloveBox>().hasGloves = false;
                 disableNext();
@@ -311,7 +317,7 @@ public class controlSlides : MonoBehaviour
                 break;
 
             default:
-                playExampleRef.gameObject.SetActive(false); // by default, disable play ref button
+                //playExampleRef.gameObject.SetActive(false); // by default, disable play ref button
                 break;
         }
     }
@@ -327,7 +333,6 @@ public class controlSlides : MonoBehaviour
             {
                 if (backSlide == currSlide)
                 {
-                    backSlide = currSlide;
                     slideEvent(currSlide);
                 }
             }
