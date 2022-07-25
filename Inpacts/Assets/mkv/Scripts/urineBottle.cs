@@ -9,6 +9,7 @@ public class urineBottle : MonoBehaviour
 	[SerializeField] private GameObject parentRef;
 
 	private bool touchedUrine = false;
+	public bool canTouch = false;
 
 	private void Start()
 	{
@@ -23,13 +24,14 @@ public class urineBottle : MonoBehaviour
 	}
 	public void urineEnable()
 	{
+		canTouch = true;
 		parentRef.SetActive(true);
 		gameObject.SetActive(true);
 		urineBottleRef.GetComponent<highlight2>().highlightObj();
 	}
 	private void OnTriggerEnter(Collider other)
 	{
-		if(other.gameObject == urineStripRef && !touchedUrine)
+		if(other.gameObject == urineStripRef && !touchedUrine && canTouch)
 		{
 			print("urine strip touched urine!");
 

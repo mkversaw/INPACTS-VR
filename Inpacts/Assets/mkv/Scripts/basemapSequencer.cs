@@ -11,7 +11,7 @@ public class basemapSequencer : MonoBehaviour
     private void Start()
     {
         // DEBUG PURPOSES ONLY!
-        //StartCoroutine(startSeq(0.05f));
+        //StartCoroutine(startSeq(0.05f)); // RE-COMMENT WHEN DONE
     }
     private IEnumerator startSeq(float delay) // delay between pngs
     {
