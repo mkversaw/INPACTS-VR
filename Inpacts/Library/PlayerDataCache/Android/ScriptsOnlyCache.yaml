@@ -28,6 +28,7 @@ ScriptsOnlyBuild:
     - sharpsBin
     - snapToLocation
     - snappable
+    - speechBubble
     - squeezePoint
     - testStrip
     - trashCan
@@ -113,10 +114,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -386,6 +385,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 10538}
     - Class: 114
       Script: {instanceID: 10630}
+    - Class: 114
+      Script: {instanceID: 71658}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -781,7 +782,7 @@ ScriptsOnlyBuild:
     className: GrabbableCollisionHaptics
   - hash:
       serializedVersion: 2
-      Hash: d884ef5691570173f021d922151acd9e
+      Hash: b62a70aff0eca956cd1969c483694538
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: controlSlides
@@ -1765,7 +1766,7 @@ ScriptsOnlyBuild:
     className: ControlPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 15d47b4c64126a19dbc7aabf6100d15d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: reset
@@ -3319,7 +3320,7 @@ ScriptsOnlyBuild:
     className: EventTrigger
   - hash:
       serializedVersion: 2
-      Hash: 329509adc7bda1f057c1a236bd5817b9
+      Hash: 1e5bd552761a204cc51f7789865bff05
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: trashCan
@@ -3923,7 +3924,13 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualEffectGraph.Runtime.dll
     namespaceName: UnityEngine.VFX.Utility
     className: VFXRaycastBinder
+  - hash:
+      serializedVersion: 2
+      Hash: 1198db2aee0377931447fd9b55986d2f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: speechBubble
   platform: 13
   scenePathNames:
   - Assets/mkv/Scenes/testNewENV2.unity
-  playerPath: C:/Users/Miles/Desktop/platform-tools_r33.0.1-windows/platform-tools/inpactsBuild_7-24.apk
+  playerPath: C:/Users/Miles/Desktop/platform-tools_r33.0.1-windows/platform-tools/inpactsBuild_7-27.apk

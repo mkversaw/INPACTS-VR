@@ -12,6 +12,8 @@ public class trashCan : MonoBehaviour
     public GameObject leftCollider;
     public GameObject rightCollider;
 
+    
+
     [System.NonSerialized] public bool hasGloves = true;
     [System.NonSerialized] public bool deletedStrip = false;
     [System.NonSerialized] public bool deletedUrineStrip = false;
@@ -26,6 +28,11 @@ public class trashCan : MonoBehaviour
     public GameObject urineStripRef;
     public GameObject urineCupRef;
 
+
+    public GameObject lancetRef;
+    private Vector3 lancetPos;
+    private Quaternion lancetRot;
+
     private GameObject manager;
 
     private bool wasHighlighted = false;
@@ -35,6 +42,9 @@ public class trashCan : MonoBehaviour
     {
         Texture handTex = leftHandRef.GetComponent<SkinnedMeshRenderer>().material.mainTexture; // get the meshRenderer component from the hand(s)
         manager = GameObject.FindGameObjectWithTag("Manager");
+
+        lancetPos = lancetRef.transform.position;
+        lancetRot = lancetRef.transform.rotation;
     }
 
     public void round2Checks()
@@ -44,6 +54,11 @@ public class trashCan : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        if(other.gameObject == lancetRef)
+        {
+            teleportLancet();
+        }
+
         if (this.GetComponent<highlight2>().isHighlighted || wasHighlighted) // only delete if highlighted
         {
             if (other.gameObject == leftCollider || other.gameObject == rightCollider) // GLOVES CASE
@@ -134,5 +149,15 @@ public class trashCan : MonoBehaviour
         obj.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll; // make it immovable
         obj.gameObject.transform.position = new Vector3(-100, -100, -100); // teleport it far away
         obj.gameObject.transform.localScale = new Vector3(0.001f, 0.001f, 0.001f);
+    }
+
+    private void teleportLancet()
+    {
+        print("resetting the position of lancet from the trashcan");
+        lancetRef.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        lancetRef.GetComponent<Rigidbody>().isKinematic = true;
+        lancetRef.transform.position = lancetPos; // if its in the list then reset its position
+        lancetRef.transform.rotation = lancetRot; //
+        lancetRef.GetComponent<Rigidbody>().isKinematic = false;
     }
 }

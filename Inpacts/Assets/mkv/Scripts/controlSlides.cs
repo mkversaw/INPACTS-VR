@@ -26,7 +26,8 @@ public class controlSlides : MonoBehaviour
     [SerializeField] private GameObject urineBottleRef;
     [SerializeField] private GameObject urineSTRIPBottleRef;
 
-
+    [SerializeField] private GameObject waterBottleRef;
+    [SerializeField] private GameObject waterRef;
 
     [SerializeField] private Button nextRef;
     [SerializeField] private Button prevRef;
@@ -117,6 +118,7 @@ public class controlSlides : MonoBehaviour
 
         GetComponent<clearObjects>().clear(); // clear out un-needed objects from the table e.g. the glucometer
 
+        waterBottleRef.SetActive(true);
         urineStripRef.SetActive(true); // enable the urine strip object
         urineSTRIPBottleRef.SetActive(true); // enable the urine strip bottle object
 
@@ -126,9 +128,25 @@ public class controlSlides : MonoBehaviour
 
         GameObject.Find("CenterEyeAnchor").GetComponent<OVRScreenFade>().FadeIn();
 
-        fadeCanvasRef.GetComponent<projectText>().alterText(fadeTextCounter, false); // increment fade text counter here
+        fadeCanvasRef.GetComponent<projectText>().alterText(fadeTextCounter++, false); // increment fade text counter here
     }
 
+    IEnumerator waterBottleTransition(float t)
+    {
+        GameObject.Find("CenterEyeAnchor").GetComponent<OVRScreenFade>().FadeOut();
+        yield return new WaitForSeconds(5.0f);
+
+        managerRef.GetComponent<controlSound>().Play("water"); // play water sound FX
+        fadeCanvasRef.GetComponent<projectText>().alterText(fadeTextCounter, true);
+
+        waterRef.SetActive(true);
+
+        yield return new WaitForSeconds(3.0f);
+
+        GameObject.Find("CenterEyeAnchor").GetComponent<OVRScreenFade>().FadeIn();
+
+        fadeCanvasRef.GetComponent<projectText>().alterText(fadeTextCounter++, false); // increment fade text counter here
+    }
 
     public void disableNext()
     {
@@ -212,6 +230,9 @@ public class controlSlides : MonoBehaviour
 
             case 8: // prepare glucose monitor
 
+                glucometerRef.GetComponent<highlight2>().unhighlightObj(); 
+                testStripRef.GetComponent<highlight2>().unhighlightObj(); 
+
 
                 lancetRef.GetComponent<highlight2>().highlightObj();
                 disableNext(); // cant move on until task is done
@@ -243,7 +264,7 @@ public class controlSlides : MonoBehaviour
                 break;
 
             case 12:
-
+                //trashCanRef.GetComponent<MeshCollider>().enabled = true;
                 trashCanRef.GetComponent<highlight2>().highlightObj(); // highlight the trashCan
 
                 animControlRef.GetComponent<patient2>().playCottonBall(); // play animation of grabbing cotton ball
@@ -257,7 +278,7 @@ public class controlSlides : MonoBehaviour
 
             case 13:
 
-                
+                //trashCanRef.GetComponent<MeshCollider>().enabled = false;
 
                 break;
 
@@ -291,6 +312,7 @@ public class controlSlides : MonoBehaviour
 
             case 17:
 
+                //trashCanRef.GetComponent<MeshCollider>().enabled = true;
                 trashCanRef.GetComponent<trashCan>().round2Checks(); // enable urine stuff checks etc from the trash can
                 trashCanRef.GetComponent<highlight2>().highlightObj(); // highlight the trashCan
 
@@ -300,12 +322,13 @@ public class controlSlides : MonoBehaviour
 
             case 18:
 
-                
+                //trashCanRef.GetComponent<MeshCollider>().enabled = false;
                 // water bottle etc ?
 
                 break;
 
             case 19:
+                StartCoroutine(waterBottleTransition(3.0f));
 
                 tvRef.SetActive(true);
                 disableNext();
@@ -313,6 +336,8 @@ public class controlSlides : MonoBehaviour
                 break;
 
             case 20:
+
+                disableNext();
 
                 break;
 
@@ -328,18 +353,6 @@ public class controlSlides : MonoBehaviour
         {
             prevRef.interactable = true;
             managerRef.GetComponent<controlSound>().Play("click"); // play button click noise
-
-            if (currSlide == slides.Count - 1) // if on the last slide
-            {
-                if (backSlide == currSlide)
-                {
-                    slideEvent(currSlide);
-                }
-            }
-            else // base case
-            {
-
-
 
                 if (backSlide != currSlide) // no event should play
                 {
@@ -367,7 +380,7 @@ public class controlSlides : MonoBehaviour
                     slideEvent(currSlide);
                 }
                 backSlide++;
-            }
+            
         }
     }
 
