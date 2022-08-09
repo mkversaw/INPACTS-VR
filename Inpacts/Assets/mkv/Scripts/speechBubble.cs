@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class speechBubble : MonoBehaviour
 {
@@ -14,8 +15,8 @@ public class speechBubble : MonoBehaviour
 	{
 		print("ENABLING THE BUBBLE");
 		yield return new WaitForSeconds(4.2f);
-		speechBubbleRef.SetActive(true);
+		speechBubbleRef.GetComponent<Image>().enabled = true;
 		yield return new WaitForSeconds(18.5f);
-		speechBubbleRef.SetActive(false);
+		speechBubbleRef.GetComponent<Image>().enabled = false;
 	}
 }

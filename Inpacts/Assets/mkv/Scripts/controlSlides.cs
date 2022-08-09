@@ -29,6 +29,8 @@ public class controlSlides : MonoBehaviour
     [SerializeField] private GameObject waterBottleRef;
     [SerializeField] private GameObject waterRef;
 
+    [SerializeField] private GameObject ghostHandRef;
+
     [SerializeField] private Button nextRef;
     [SerializeField] private Button prevRef;
     [SerializeField] private Button playExampleRef;
@@ -136,7 +138,6 @@ public class controlSlides : MonoBehaviour
         GameObject.Find("CenterEyeAnchor").GetComponent<OVRScreenFade>().FadeOut();
         yield return new WaitForSeconds(5.0f);
 
-        managerRef.GetComponent<controlSound>().Play("water"); // play water sound FX
         fadeCanvasRef.GetComponent<projectText>().alterText(fadeTextCounter, true);
 
         waterRef.SetActive(true);
@@ -250,7 +251,7 @@ public class controlSlides : MonoBehaviour
                 break;
 
             case 10: // prick finger
-
+                ghostHandRef.SetActive(true);
                 testStripRef.GetComponent<testStrip>().canTouch = true; // !!!!!!!!!!
                 disableNext(); // cant move on until task is done
 

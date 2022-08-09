@@ -9,6 +9,7 @@ public class squeezePoint : MonoBehaviour
     public GameObject pinchHandRef;
     public GameObject leftHandRef;
     public GameObject rightHandRef;
+    public GameObject ghostHandRef;
 
     private bool doScale = true;
 
@@ -36,6 +37,7 @@ public class squeezePoint : MonoBehaviour
 
     IEnumerator enableSqueeze(bool right)
     {
+        ghostHandRef.SetActive(false);
         pinchHandRef.SetActive(true);
         this.GetComponent<Renderer>().enabled = false; // disable highlight renderer
 
