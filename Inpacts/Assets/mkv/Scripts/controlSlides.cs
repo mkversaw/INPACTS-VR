@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Manages the slides, their interactions, and transitions
+/// Very important class, interacts with most other components
+/// </summary>
 public class controlSlides : MonoBehaviour
 {
     [SerializeField] private bool debugMode = false;
     [SerializeField] private bool disableWater = false; // save time when testing :)
 
     [SerializeField] private List<GameObject> slides;
-    [SerializeField] private bool loopSlides;
     [SerializeField] private GameObject animControlRef;
     [SerializeField] private GameObject managerRef;
     [SerializeField] private GameObject gloveBoxRef;
@@ -60,9 +63,6 @@ public class controlSlides : MonoBehaviour
         urineSTRIPBottleRef.SetActive(false);
 
         slideEvent(currSlide);
-
-
-        
     }
 
     private void Update() // scuffed, need to redo this later!
@@ -86,6 +86,7 @@ public class controlSlides : MonoBehaviour
             }
         }
     }
+
 
     IEnumerator Fade(float t) // coroutine to fade screen out for 3 seconds then back in
     {
@@ -179,11 +180,6 @@ public class controlSlides : MonoBehaviour
     private void slideEvent(int i) // if the given slide has an event, then play it
     {
 
-        //if(backSlide != currSlide) // ensure that no action runs twice
-        //{
-        //    return;
-        //}
-
         switch(i)
         {
             case 1:
@@ -191,11 +187,9 @@ public class controlSlides : MonoBehaviour
                 break;
 
             case 3:
-                //playExampleRef.gameObject.SetActive(true); // play voice line of example intro
                 break;
 
             case 4: // introducing yourself to patient
-                //playExampleRef.gameObject.SetActive(false);
                 break;
 
             case 5: // washing hands
@@ -213,7 +207,6 @@ public class controlSlides : MonoBehaviour
 
             case 6: // put on gloves
 
-                
                 break;
 
             case 7: // patient washes their hands
@@ -241,9 +234,6 @@ public class controlSlides : MonoBehaviour
                 break;
 
             case 9: // prepare lancet
-
-                //playExampleRef.gameObject.SetActive(true); // enable example for voiceline of asking patient to position their hand
-
                 animControlRef.GetComponent<patient2>().playArmRaise(); // play animation of arm extend
                 prickSiteRef.SetActive(true);
                 disableNext(); // cant move on until task is done
@@ -252,6 +242,10 @@ public class controlSlides : MonoBehaviour
 
             case 10: // prick finger
                 ghostHandRef.SetActive(true);
+                //canBeGrabbed
+                
+                FindObjectOfType<squeezePoint>().GetComponent<squeezePoint>().canBeGrabbed = true;
+                
                 testStripRef.GetComponent<testStrip>().canTouch = true; // !!!!!!!!!!
                 disableNext(); // cant move on until task is done
 
@@ -259,13 +253,9 @@ public class controlSlides : MonoBehaviour
 
             case 11:
 
-                //gloveBoxRef.GetComponent<gloveBox>().highlighted = true;
-                //gloveBoxRef.GetComponent<gloveBox>().hasGloves = true;
-
                 break;
 
             case 12:
-                //trashCanRef.GetComponent<MeshCollider>().enabled = true;
                 trashCanRef.GetComponent<highlight2>().highlightObj(); // highlight the trashCan
 
                 animControlRef.GetComponent<patient2>().playCottonBall(); // play animation of grabbing cotton ball
@@ -278,8 +268,6 @@ public class controlSlides : MonoBehaviour
 
 
             case 13:
-
-                //trashCanRef.GetComponent<MeshCollider>().enabled = false;
 
                 break;
 
@@ -313,7 +301,6 @@ public class controlSlides : MonoBehaviour
 
             case 17:
 
-                //trashCanRef.GetComponent<MeshCollider>().enabled = true;
                 trashCanRef.GetComponent<trashCan>().round2Checks(); // enable urine stuff checks etc from the trash can
                 trashCanRef.GetComponent<highlight2>().highlightObj(); // highlight the trashCan
 
@@ -322,9 +309,6 @@ public class controlSlides : MonoBehaviour
                 break;
 
             case 18:
-
-                //trashCanRef.GetComponent<MeshCollider>().enabled = false;
-                // water bottle etc ?
 
                 break;
 
@@ -343,7 +327,7 @@ public class controlSlides : MonoBehaviour
                 break;
 
             default:
-                //playExampleRef.gameObject.SetActive(false); // by default, disable play ref button
+                
                 break;
         }
     }

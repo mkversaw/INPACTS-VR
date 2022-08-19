@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class wasGrabbed : MonoBehaviour
 {
-    // Start is called before the first frame update
     [System.NonSerialized] public bool grabbed = false;
     [System.NonSerialized] public bool highlighted = false;
 
     public bool shouldMoveOn = false;
 
-    // Update is called once per frame
     void Update()
     {
         

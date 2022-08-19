@@ -2,25 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Animates a given renderer's material through a pre-set list of textures. Can also set the delay between each texture
+/// </summary>
 public class basemapSequencer : MonoBehaviour
 {
-    //public Material matRef;
-    public Renderer rend;
-    public Texture[] sequence;
+    public Renderer rend; // the object's renderer component
+    public Texture[] sequence; // the list of sprites/textures the sequence should go through
 
-    private void Start()
-    {
-        // DEBUG PURPOSES ONLY!
-        //StartCoroutine(startSeq(0.05f)); // RE-COMMENT WHEN DONE
-    }
     private IEnumerator startSeq(float delay) // delay between pngs
     {
         print("STARTED PNG SEQUENCE!");
         foreach (Texture tex in sequence) {
-
-            //matRef.SetTexture("_BaseMap", tex);
-            rend.material.SetTexture("_BaseMap", tex);
-
+            rend.material.SetTexture("_BaseMap", tex); // update the renderer's material with the new texture every (delay) seconds
             yield return new WaitForSeconds(delay);
         }
     }
@@ -30,12 +24,11 @@ public class basemapSequencer : MonoBehaviour
         StartCoroutine(startSeq(0.05f));
     }
 
-    private void OnApplicationQuit()
+    private void OnApplicationQuit() // this resets the renderer's material so no permanent changes occur
     {
         if (sequence.Length > 0)
         {
             rend.material.SetTexture("_BaseMap", sequence[0]);
-            print("set to: " + sequence[0].name);
         }
     }
 }

@@ -5,9 +5,8 @@ using UnityEngine;
 public class changeHand : MonoBehaviour
 {
     public GameObject ovrgrabberRef;
-    public Renderer normalRend; // should be the default
-    public Renderer fistRend;
-    //public Renderer pinchRend;
+    public Renderer normalRend; // Default hand
+    public Renderer fistRend; // Fist hand
     public bool buttonMode = true;
     public bool right = true; // which hand
 
@@ -17,7 +16,6 @@ public class changeHand : MonoBehaviour
     {
         normalRend.enabled = true;
         fistRend.enabled = false;
-        //pinchRend.enabled = false;
     }
 
     private bool checkButtonDown()
