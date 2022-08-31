@@ -42,4 +42,13 @@ public class reset : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single); // reset scene
     }
+
+    public void prevScene()
+    {
+        SceneManager.LoadScene("Lobby Scene");
+    }
+    public void nextScene()
+    {
+        SceneManager.LoadScene("PEDI Scenario");
+    }
 }
