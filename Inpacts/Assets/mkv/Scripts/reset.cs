@@ -43,6 +43,11 @@ public class reset : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single); // reset scene
     }
 
+    public void QuitApplication()
+    {
+        Application.Quit();
+    }
+
     public void prevScene()
     {
         SceneManager.LoadScene("Lobby Scene");

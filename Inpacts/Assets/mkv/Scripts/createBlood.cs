@@ -24,6 +24,8 @@ public class createBlood : MonoBehaviour
             print("lance collision detected, enabling blood drop");
             madeBlood = true;
 
+            GameObject.FindGameObjectWithTag("Manager").GetComponent<controlSound>().Play("whoosh");
+
             GameObject.FindGameObjectWithTag("Manager").GetComponent<controlSlides>().pricked = true;
             GameObject.FindGameObjectWithTag("Manager").GetComponent<controlSlides>().enableNext(); // update status in manager
 

@@ -38,6 +38,8 @@ public class controlSlides : MonoBehaviour
     [SerializeField] private Button prevRef;
     [SerializeField] private Button playExampleRef;
 
+    [SerializeField] private Button startRef;
+
     public int currSlide = 0;
     public int backSlide = 0;
     public int lockPoint = -1;
@@ -400,6 +402,14 @@ public class controlSlides : MonoBehaviour
         {
             enableNext();
         }
+    }
+
+    public void EnableButtons()
+    {
+        startRef.gameObject.SetActive(false);
+        nextRef.gameObject.SetActive(true);
+        prevRef.gameObject.SetActive(true);
+        nextSlide();
     }
 
 }
