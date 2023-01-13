@@ -40,5 +40,19 @@ public class floorTeleport : MonoBehaviour
         
     }
 
-    
+    public void resetObject(GameObject resetObj)
+    {
+        for (int i = 0; i < objs.Length; i++) // for each object
+        {
+            if (resetObj == objs[i]) // check the collided obj to see if its in the list
+            {
+                print("resetting the position of: " + objs[i].gameObject.name);
+                objs[i].GetComponent<Rigidbody>().velocity = Vector3.zero;
+                objs[i].GetComponent<Rigidbody>().isKinematic = true;
+                objs[i].transform.position = originalPositions[i]; // if its in the list then reset its position
+                objs[i].transform.rotation = originalRotations[i]; //
+                objs[i].GetComponent<Rigidbody>().isKinematic = false;
+            }
+        }
+    }
 }
