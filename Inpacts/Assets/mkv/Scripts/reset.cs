@@ -7,6 +7,7 @@ public class reset : MonoBehaviour
 {
     public GameObject oculusRef;
     private bool easyOn = false;
+    public logData logRef;
     void Update()
     {
         if ( // if all of these buttons are held
@@ -40,11 +41,14 @@ public class reset : MonoBehaviour
 
     public void resetScene()
     {
+        logRef.writeLine("Reset Scene");
+        logRef.eventWriter.Close();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single); // reset scene
     }
 
     public void QuitApplication()
     {
+        logRef.writeLine("SESSION ENDED");
         Application.Quit();
     }
 

@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 1, g: 1, b: 1, a: 1}
   m_AmbientEquatorColor: {r: 0.20754719, g: 0.20754719, b: 0.20754719, a: 1}
   m_AmbientGroundColor: {r: 0.3584906, g: 0.3584906, b: 0.3584906, a: 1}
-  m_AmbientIntensity: 1
+  m_AmbientIntensity: 1.27
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: b95594ffeaf238c46a8d575dcd72705a, type: 2}
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 37cd015a09c6d3146b5b62029a644c69,
+  m_LightingDataAsset: {fileID: 112000000, guid: 7f922f59016b5ba4b8a11413bf9fd778,
     type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 65e11edc6ad81a34ca276ba2ab03ef41,
     type: 2}
@@ -3588,6 +3588,7 @@ GameObject:
   - component: {fileID: 329673894}
   - component: {fileID: 329673891}
   - component: {fileID: 329673895}
+  - component: {fileID: 329673896}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Manager
@@ -3710,6 +3711,7 @@ MonoBehaviour:
   prevRef: {fileID: 1531414151}
   playExampleRef: {fileID: 330935703}
   startRef: {fileID: 398087207}
+  logRef: {fileID: 329673896}
   currSlide: 0
   backSlide: 0
   lockPoint: 0
@@ -3779,6 +3781,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oculusRef: {fileID: 1936170335}
+  logRef: {fileID: 329673896}
+--- !u!114 &329673896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329673887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e59dad1417ec02e4cb0533e23a103366, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &330935701
 GameObject:
   m_ObjectHideFlags: 0
@@ -4360,6 +4375,7 @@ MonoBehaviour:
   urineStripRef: {fileID: 1373945354}
   urineBottleRef: {fileID: 1011664238}
   parentRef: {fileID: 1011664238}
+  logRef: {fileID: 329673896}
   canTouch: 0
 --- !u!1001 &384340618
 PrefabInstance:
@@ -7019,6 +7035,7 @@ MonoBehaviour:
   leftHandRef: {fileID: 1936170339}
   rightHandRef: {fileID: 1936170338}
   ghostHandRef: {fileID: 39157764}
+  logRef: {fileID: 329673896}
   canBeGrabbed: 0
 --- !u!114 &512030950
 MonoBehaviour:
@@ -7033,6 +7050,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lance: {fileID: 92223689}
+  logRef: {fileID: 329673896}
 --- !u!135 &512030951
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -14993,6 +15011,7 @@ MonoBehaviour:
   urineStripRef: {fileID: 1373945354}
   urineBottleRef: {fileID: 1527058576}
   parentRef: {fileID: 0}
+  logRef: {fileID: 0}
   canTouch: 0
 --- !u!1001 &1389651348
 PrefabInstance:
@@ -20033,7 +20052,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 5.0267892e+33, z: 4.5904e-41, w: 0.00000004737987}
+  m_BoundingSphereOverride: {x: 3.18e-43, y: 1.02e-43, z: 0.03515625, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -21694,7 +21713,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11400010, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: EnableLinearMovement
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 14300000, guid: ce816f2e6abb0504092c23ed9b970dfd, type: 3}
       propertyPath: m_Height
@@ -29777,6 +29796,7 @@ MonoBehaviour:
   leftCollider: {fileID: 1936170339}
   rightCollider: {fileID: 1936170338}
   gloveTex: {fileID: 2800000, guid: a702f7ab618e81e44af147e128bf4de5, type: 3}
+  logRef: {fileID: 329673896}
 --- !u!65 &2049334354778818430
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31478,6 +31498,7 @@ MonoBehaviour:
   textRef: {fileID: 368261640}
   thisRef: {fileID: 2896211525543690075}
   floorTeleRef: {fileID: 1377154159}
+  logRef: {fileID: 329673896}
   canTouch: 0
 --- !u!114 &2896211525543690082
 MonoBehaviour:
@@ -39371,6 +39392,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lanceRef: {fileID: 475602833}
   rightHand: {fileID: 1936170338}
+  logRef: {fileID: 329673896}
   canDelete: 0
 --- !u!64 &7765550856357087519
 MeshCollider:
@@ -39931,6 +39953,7 @@ MonoBehaviour:
   urineStripRef: {fileID: 1373945354}
   urineCupRef: {fileID: 1011664238}
   lancetRef: {fileID: 475602833}
+  logRef: {fileID: 329673896}
 --- !u!114 &8127965768044521959
 MonoBehaviour:
   m_ObjectHideFlags: 0

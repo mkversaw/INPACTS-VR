@@ -6,6 +6,7 @@ public class sharpsBin : MonoBehaviour
 {
     [SerializeField] private GameObject lanceRef;
     [SerializeField] private GameObject rightHand;
+    public logData logRef;
     public bool canDelete = false;
     private void OnCollisionEnter(Collision collision)
     {
@@ -16,9 +17,9 @@ public class sharpsBin : MonoBehaviour
             //lanceRef.GetComponent<OVRGrabbable>().enabled = false; // turn off the OVRGrabbable script
 
             //print(rightHand.GetComponent<OVRGrabber>().grabbedObject.gameObject.name);
-            
-            //rightHand.GetComponent<OVRGrabber>().ForceRelease(lanceRef.GetComponent<OVRGrabbable>());
 
+            //rightHand.GetComponent<OVRGrabber>().ForceRelease(lanceRef.GetComponent<OVRGrabbable>());
+            logRef.writeLine("Put lancet in sharps bin");
             deleteGrabbed(lanceRef);
             GameObject.FindGameObjectWithTag("Manager").GetComponent<createSmoke>().spawnSmoke(gameObject.transform);
             GameObject.FindGameObjectWithTag("Manager").GetComponent<controlSlides>().sharpsTrash();

@@ -7,7 +7,7 @@ public class urineBottle : MonoBehaviour
 	[SerializeField] private GameObject urineStripRef;
 	[SerializeField] private GameObject urineBottleRef;
 	[SerializeField] private GameObject parentRef;
-
+	public logData logRef;
 	private bool touchedUrine = false;
 	public bool canTouch = false;
 
@@ -34,7 +34,7 @@ public class urineBottle : MonoBehaviour
 		if(other.gameObject == urineStripRef && !touchedUrine && canTouch)
 		{
 			print("urine strip touched urine!");
-
+			logRef.writeLine("Urine strip touched urine sample");
 			urineStripRef.GetComponent<basemapSequencer>().startSequence();
 			touchedUrine = true;
 

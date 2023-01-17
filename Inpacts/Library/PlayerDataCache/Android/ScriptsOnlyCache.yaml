@@ -21,6 +21,7 @@ ScriptsOnlyBuild:
     - floorTeleport
     - gloveBox
     - highlight2
+    - logData
     - patient2
     - projectText
     - rayswapper
@@ -105,9 +106,16 @@ ScriptsOnlyBuild:
     Unity.XR.Management.dll:
     - UnityEngine.XR.Management.XRGeneralSettings
     - UnityEngine.XR.Management.XRManagerSettings
+    Unity.XR.Oculus.Editor.dll:
+    - Unity.XR.Oculus.Editor.OculusSettingsEditor
     Unity.XR.Oculus.dll:
     - Unity.XR.Oculus.OculusLoader
     - Unity.XR.Oculus.OculusSettings
+    Unity.XR.WindowsMixedReality.Editor.dll:
+    - UnityEditor.XR.WindowsMR.WindowsMRPackageSettings
+    Unity.XR.WindowsMixedReality.dll:
+    - UnityEngine.XR.WindowsMR.WindowsMRBuildSettings
+    - UnityEngine.XR.WindowsMR.WindowsMRSettings
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -289,95 +297,97 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 6116}
     - Class: 114
-      Script: {instanceID: 6362}
+      Script: {instanceID: 6356}
     - Class: 114
-      Script: {instanceID: 6742}
+      Script: {instanceID: 6364}
     - Class: 114
       Script: {instanceID: 6744}
     - Class: 114
-      Script: {instanceID: 6770}
+      Script: {instanceID: 6746}
     - Class: 114
-      Script: {instanceID: 6782}
+      Script: {instanceID: 6772}
     - Class: 114
-      Script: {instanceID: 6852}
+      Script: {instanceID: 6784}
     - Class: 114
-      Script: {instanceID: 6872}
+      Script: {instanceID: 6854}
     - Class: 114
-      Script: {instanceID: 6914}
+      Script: {instanceID: 6874}
     - Class: 114
-      Script: {instanceID: 7042}
+      Script: {instanceID: 6916}
     - Class: 114
-      Script: {instanceID: 7098}
+      Script: {instanceID: 7044}
     - Class: 114
-      Script: {instanceID: 7136}
+      Script: {instanceID: 7100}
     - Class: 114
-      Script: {instanceID: 7164}
+      Script: {instanceID: 7138}
     - Class: 114
       Script: {instanceID: 7166}
     - Class: 114
       Script: {instanceID: 7168}
     - Class: 114
-      Script: {instanceID: 7194}
+      Script: {instanceID: 7170}
     - Class: 114
-      Script: {instanceID: 7464}
+      Script: {instanceID: 7196}
     - Class: 114
-      Script: {instanceID: 7550}
+      Script: {instanceID: 7466}
     - Class: 114
-      Script: {instanceID: 7706}
+      Script: {instanceID: 7552}
     - Class: 114
-      Script: {instanceID: 7878}
+      Script: {instanceID: 7708}
     - Class: 114
-      Script: {instanceID: 7894}
+      Script: {instanceID: 7880}
     - Class: 114
-      Script: {instanceID: 7960}
+      Script: {instanceID: 7896}
     - Class: 114
-      Script: {instanceID: 7976}
+      Script: {instanceID: 7962}
     - Class: 114
-      Script: {instanceID: 7990}
+      Script: {instanceID: 7978}
     - Class: 114
-      Script: {instanceID: 8018}
+      Script: {instanceID: 7992}
     - Class: 114
-      Script: {instanceID: 8152}
+      Script: {instanceID: 8020}
     - Class: 114
-      Script: {instanceID: 8206}
+      Script: {instanceID: 8154}
     - Class: 114
-      Script: {instanceID: 8256}
+      Script: {instanceID: 8208}
     - Class: 114
-      Script: {instanceID: 8354}
+      Script: {instanceID: 8258}
     - Class: 114
-      Script: {instanceID: 8368}
+      Script: {instanceID: 8356}
     - Class: 114
-      Script: {instanceID: 8384}
+      Script: {instanceID: 8370}
     - Class: 114
-      Script: {instanceID: 8482}
+      Script: {instanceID: 8386}
     - Class: 114
-      Script: {instanceID: 8524}
+      Script: {instanceID: 8484}
     - Class: 114
-      Script: {instanceID: 8712}
+      Script: {instanceID: 8526}
     - Class: 114
-      Script: {instanceID: 8754}
+      Script: {instanceID: 8714}
     - Class: 114
-      Script: {instanceID: 8810}
+      Script: {instanceID: 8756}
     - Class: 114
-      Script: {instanceID: 8874}
+      Script: {instanceID: 8812}
     - Class: 114
-      Script: {instanceID: 9106}
+      Script: {instanceID: 8876}
     - Class: 114
-      Script: {instanceID: 9326}
+      Script: {instanceID: 9108}
     - Class: 114
-      Script: {instanceID: 9786}
+      Script: {instanceID: 9328}
     - Class: 114
-      Script: {instanceID: 9832}
+      Script: {instanceID: 9788}
     - Class: 114
-      Script: {instanceID: 10000}
+      Script: {instanceID: 9834}
     - Class: 114
-      Script: {instanceID: 10150}
+      Script: {instanceID: 10002}
     - Class: 114
-      Script: {instanceID: 10202}
+      Script: {instanceID: 10152}
     - Class: 114
-      Script: {instanceID: 10542}
+      Script: {instanceID: 10204}
     - Class: 114
-      Script: {instanceID: 10634}
+      Script: {instanceID: 10544}
+    - Class: 114
+      Script: {instanceID: 10636}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -773,7 +783,7 @@ ScriptsOnlyBuild:
     className: GrabbableCollisionHaptics
   - hash:
       serializedVersion: 2
-      Hash: 53fdfae77ff030e2152e95cab42b086a
+      Hash: 9e3baa9a9c7a55ec0485e9fc6665d29e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: controlSlides
@@ -971,7 +981,7 @@ ScriptsOnlyBuild:
     className: OVRMeshRenderer
   - hash:
       serializedVersion: 2
-      Hash: 041a5ddb6fb1fba53815e772f9fb095b
+      Hash: 2964101af567e1ba2bb4afffa11cbbc4
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: testStrip
@@ -1205,7 +1215,7 @@ ScriptsOnlyBuild:
     className: TextFieldInspector
   - hash:
       serializedVersion: 2
-      Hash: 2250c42db3a28293ae1891af8322e548
+      Hash: 9caa234674247fcf088fd85b47a6d4d0
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: createBlood
@@ -1757,7 +1767,7 @@ ScriptsOnlyBuild:
     className: ControlPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 15d47b4c64126a19dbc7aabf6100d15d
+      Hash: a3d9121f57b976bba9e9eb70ea86ebb9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: reset
@@ -2081,7 +2091,7 @@ ScriptsOnlyBuild:
     className: ONSPSettings
   - hash:
       serializedVersion: 2
-      Hash: 8a98b98fabdd8aef450f8489af1f1cab
+      Hash: d3fc0f221d2755a2cf989438265f8edf
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: urineBottle
@@ -2151,6 +2161,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: Oculus.Voice.Demo.UIShapesDemo
     className: ColorChanger
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: logData
   - hash:
       serializedVersion: 2
       Hash: 1c33ba4d9f3ac8f40388c6d941fd649c
@@ -2321,7 +2337,7 @@ ScriptsOnlyBuild:
     className: HorizontalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: d85aa711860c0933a9cbfa452360bc58
+      Hash: fc445d47fdabb4d04e70fb37cab1b5b7
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: gloveBox
@@ -2507,7 +2523,7 @@ ScriptsOnlyBuild:
     className: WitActivation
   - hash:
       serializedVersion: 2
-      Hash: 5e6763e25536ccaf06391c0175315949
+      Hash: 898c9667f46217db3668f20fd1792478
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: sharpsBin
@@ -2609,7 +2625,7 @@ ScriptsOnlyBuild:
     className: VolumeComponent
   - hash:
       serializedVersion: 2
-      Hash: 529207712a39a3ad4e162ccc06d6f817
+      Hash: fe615b3baa0868df6920a42434fc550b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: squeezePoint
@@ -3311,7 +3327,7 @@ ScriptsOnlyBuild:
     className: EventTrigger
   - hash:
       serializedVersion: 2
-      Hash: 1e5bd552761a204cc51f7789865bff05
+      Hash: 4820ed184b578c5fd08de9b756c1f26b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: trashCan
@@ -3918,4 +3934,4 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/mkv/Scenes/PEDI Scenario.unity
-  playerPath: C:/Users/Miles/Desktop/platform-tools/inpactsBuild_9-09.apk
+  playerPath: C:/Users/Miles/Desktop/platform-tools/inpactsBuild_1-17-22.apk

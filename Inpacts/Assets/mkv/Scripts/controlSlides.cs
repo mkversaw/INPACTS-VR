@@ -39,6 +39,7 @@ public class controlSlides : MonoBehaviour
     [SerializeField] private Button playExampleRef;
 
     [SerializeField] private Button startRef;
+    public logData logRef;
 
     public int currSlide = 0;
     public int backSlide = 0;
@@ -75,6 +76,7 @@ public class controlSlides : MonoBehaviour
             {
                 if(testStripRef.GetComponent<snappable>().isSnapped) // is glucose test strip in the monitor?
                 {
+                    logRef.writeLine("Put test strip in glucometer");
                     stripInMonitor = true;
                     enableNext();
                 }
@@ -182,7 +184,9 @@ public class controlSlides : MonoBehaviour
     private void slideEvent(int i) // if the given slide has an event, then play it
     {
 
-        switch(i)
+        
+
+        switch (i)
         {
             case 1:
                 managerRef.GetComponent<controlSound>().Play("intro"); // play the intro
@@ -367,7 +371,7 @@ public class controlSlides : MonoBehaviour
                     slideEvent(currSlide);
                 }
                 backSlide++;
-            
+            logRef.writeLine("Moved to slide: " + currSlide);
         }
     }
 
@@ -392,6 +396,7 @@ public class controlSlides : MonoBehaviour
             slides[backSlide].SetActive(false); // disable the current slide
             backSlide--; // decrement backSlide counter
             slides[backSlide].SetActive(true); // enable the previous slide
+            logRef.writeLine("Moved to slide: " + currSlide);
         }
     }
 

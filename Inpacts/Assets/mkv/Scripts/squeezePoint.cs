@@ -10,6 +10,9 @@ public class squeezePoint : MonoBehaviour
     public GameObject leftHandRef;
     public GameObject rightHandRef;
     public GameObject ghostHandRef;
+
+    public logData logRef;
+
     public bool canBeGrabbed = false;
 
     private bool doScale = true;
@@ -71,6 +74,7 @@ public class squeezePoint : MonoBehaviour
         {
             bool whichHandGrabbed = GetComponent<OVRGrabbable>().grabbedBy.gameObject.CompareTag("Right Hand");
             StartCoroutine(enableSqueeze(whichHandGrabbed)); // true if right, false if left
+            logRef.writeLine("Patient finger squeezed");
             wasGrabbed = true;
         }
 

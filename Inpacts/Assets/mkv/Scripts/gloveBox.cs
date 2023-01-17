@@ -14,6 +14,8 @@ public class gloveBox : MonoBehaviour
     //public Material gloveMat;
     public Texture gloveTex;
 
+    public logData logRef;
+
     [System.NonSerialized]  public bool highlighted = false;
 
     [System.NonSerialized]  public bool hasGloves = false;
@@ -35,6 +37,8 @@ public class gloveBox : MonoBehaviour
 
             handLeftFist.GetComponent<SkinnedMeshRenderer>().material.mainTexture = gloveTex;
             handRightFist.GetComponent<SkinnedMeshRenderer>().material.mainTexture = gloveTex;
+
+            logRef.writeLine("Put gloves on");
 
             highlighted = false;
             hasGloves = true;

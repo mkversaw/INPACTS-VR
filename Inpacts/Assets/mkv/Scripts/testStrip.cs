@@ -9,7 +9,7 @@ public class testStrip : MonoBehaviour
     [SerializeField] private GameObject textRef;
     [SerializeField] private GameObject thisRef; // ???
     [SerializeField] private floorTeleport floorTeleRef;
-
+    public logData logRef;
     public bool canTouch = false;
     bool touchedBlood = false;
 
@@ -24,6 +24,7 @@ public class testStrip : MonoBehaviour
     {
         if (other.gameObject == bloodRef && !touchedBlood && canTouch)
         {
+            logRef.writeLine("Test strip touched blood");
             print("test strip touched blood!");
             thisRef.GetComponent<basemapSequencer>().startSequence();
             Destroy(bloodRef);
