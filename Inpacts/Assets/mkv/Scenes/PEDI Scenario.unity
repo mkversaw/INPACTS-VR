@@ -17787,6 +17787,11 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 2999475448895428409, guid: aae1c3fc7dd27a842adb456533768b9b,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2999475448895428409, guid: aae1c3fc7dd27a842adb456533768b9b,
+        type: 3}
       propertyPath: m_BlendShapeWeights.Array.size
       value: 1
       objectReference: {fileID: 0}

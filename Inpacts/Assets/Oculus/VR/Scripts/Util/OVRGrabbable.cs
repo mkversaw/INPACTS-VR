@@ -110,6 +110,7 @@ public class OVRGrabbable : MonoBehaviour
 	/// </summary>
 	virtual public void GrabBegin(OVRGrabber hand, Collider grabPoint)
     {
+        writeLine("Grabbed: " + this.name);
         m_grabbedBy = hand;
         m_grabbedCollider = grabPoint;
         gameObject.GetComponent<Rigidbody>().isKinematic = true;
@@ -120,6 +121,7 @@ public class OVRGrabbable : MonoBehaviour
 	/// </summary>
 	virtual public void GrabEnd(Vector3 linearVelocity, Vector3 angularVelocity)
     {
+        writeLine("Released: " + this.name);
         Rigidbody rb = gameObject.GetComponent<Rigidbody>();
         rb.isKinematic = m_grabbedKinematic;
         rb.velocity = linearVelocity;
@@ -156,5 +158,12 @@ public class OVRGrabbable : MonoBehaviour
             // Notify the hand to release destroyed grabbables
             m_grabbedBy.ForceRelease(this);
         }
+    }
+
+    private void writeLine(string input) // -mkv
+    {
+        System.IO.StreamWriter eventWriter = new System.IO.StreamWriter(Application.persistentDataPath + "/pediLogFile.txt", true); // append to existing file
+        eventWriter.WriteLine("[" + DateTime.Now.ToString() + "] " + input); // output the msg with a timestamp
+        eventWriter.Close();
     }
 }

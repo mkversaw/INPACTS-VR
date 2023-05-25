@@ -34,7 +34,7 @@ public class urineBottle : MonoBehaviour
 		if(other.gameObject == urineStripRef && !touchedUrine && canTouch)
 		{
 			print("urine strip touched urine!");
-			logRef.writeLine("Urine strip touched urine sample");
+			logData.writeLine("Urine strip touched urine sample");
 			urineStripRef.GetComponent<basemapSequencer>().startSequence();
 			touchedUrine = true;
 

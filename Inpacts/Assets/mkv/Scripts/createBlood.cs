@@ -26,7 +26,7 @@ public class createBlood : MonoBehaviour
             madeBlood = true;
 
             GameObject.FindGameObjectWithTag("Manager").GetComponent<controlSound>().Play("whoosh");
-            logRef.writeLine("Patient finger pricked");
+            logData.writeLine("Patient finger pricked");
             GameObject.FindGameObjectWithTag("Manager").GetComponent<controlSlides>().pricked = true;
             GameObject.FindGameObjectWithTag("Manager").GetComponent<controlSlides>().enableNext(); // update status in manager
 

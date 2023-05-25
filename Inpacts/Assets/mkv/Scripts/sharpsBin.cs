@@ -19,7 +19,7 @@ public class sharpsBin : MonoBehaviour
             //print(rightHand.GetComponent<OVRGrabber>().grabbedObject.gameObject.name);
 
             //rightHand.GetComponent<OVRGrabber>().ForceRelease(lanceRef.GetComponent<OVRGrabbable>());
-            logRef.writeLine("Put lancet in sharps bin");
+            logData.writeLine("Put lancet in sharps bin");
             deleteGrabbed(lanceRef);
             GameObject.FindGameObjectWithTag("Manager").GetComponent<createSmoke>().spawnSmoke(gameObject.transform);
             GameObject.FindGameObjectWithTag("Manager").GetComponent<controlSlides>().sharpsTrash();

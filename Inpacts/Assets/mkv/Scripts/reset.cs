@@ -41,14 +41,14 @@ public class reset : MonoBehaviour
 
     public void resetScene()
     {
-        logRef.writeLine("Reset Scene");
-        logRef.eventWriter.Close();
+        logData.writeLine("Reset Scene");
+        //logRef.eventWriter.Close();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single); // reset scene
     }
 
     public void QuitApplication()
     {
-        logRef.writeLine("SESSION ENDED");
+        logData.writeLine("SESSION ENDED");
         Application.Quit();
     }
 

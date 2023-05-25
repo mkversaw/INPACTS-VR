@@ -24,7 +24,7 @@ public class testStrip : MonoBehaviour
     {
         if (other.gameObject == bloodRef && !touchedBlood && canTouch)
         {
-            logRef.writeLine("Test strip touched blood");
+            logData.writeLine("Test strip touched blood");
             print("test strip touched blood!");
             thisRef.GetComponent<basemapSequencer>().startSequence();
             Destroy(bloodRef);

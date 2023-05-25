@@ -4,51 +4,37 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-public class logData : MonoBehaviour
-{
-    public StreamWriter eventWriter;
 
-    // Start is called before the first frame update
-    void Start()
+    public class logData : MonoBehaviour
     {
-        Debug.Log("dataPath: " + Application.persistentDataPath);
-        eventWriter = new StreamWriter(Application.persistentDataPath + "/pediLogFile.txt", true); // append to existing file
-        DateTime dateCurrent = DateTime.Now;
-        eventWriter.WriteLine("[" + dateCurrent.ToString() + "] " + "NEW SESSION STARTED"); // output the msg with a timestamp
-        eventWriter.Close();
-    }
-
-
-    void OnApplicationQuit()
-    {
-        //eventWriter = new StreamWriter(Application.persistentDataPath + "/pediLogFile.txt", true); // append to existing file
-        //DateTime dateCurrent = DateTime.Now;
-        //eventWriter.WriteLine("[" + dateCurrent.ToString() + "] " + "SESSION ENDED"); // output the msg with a timestamp
-        //eventWriter.Close();
-    }
-
-    void OnApplicationPause(bool pause)
-    {
-        if (pause)
+        void Start()
         {
-            eventWriter = new StreamWriter(Application.persistentDataPath + "/pediLogFile.txt", true); // append to existing file
-            DateTime dateCurrent = DateTime.Now;
-            eventWriter.WriteLine("[" + dateCurrent.ToString() + "] " + "SESSION ENDED"); // output the msg with a timestamp
+            Debug.Log("dataPath: " + Application.persistentDataPath);
+            StreamWriter eventWriter = new StreamWriter(Application.persistentDataPath + "/pediLogFile.txt", true); // append to existing file
+            eventWriter.WriteLine("[" + DateTime.Now.ToString() + "] " + "NEW SESSION STARTED"); // output the msg with a timestamp
             eventWriter.Close();
-        } else
+        }
+
+        void OnApplicationPause(bool pause)
         {
-            eventWriter = new StreamWriter(Application.persistentDataPath + "/pediLogFile.txt", true); // append to existing file
-            DateTime dateCurrent = DateTime.Now;
-            eventWriter.WriteLine("[" + dateCurrent.ToString() + "] " + "SESSION UNPAUSED"); // output the msg with a timestamp
+            if (pause) // game is paused, but on the Quest this is actually the game being quit (kinda?)
+            {
+                StreamWriter eventWriter = new StreamWriter(Application.persistentDataPath + "/pediLogFile.txt", true); // append to existing file
+                eventWriter.WriteLine("[" + DateTime.Now.ToString() + "] " + "SESSION ENDED"); // output the msg with a timestamp
+                eventWriter.Close();
+            }
+            else // game is actually paused
+            {
+                StreamWriter eventWriter = new StreamWriter(Application.persistentDataPath + "/pediLogFile.txt", true); // append to existing file
+                eventWriter.WriteLine("[" + DateTime.Now.ToString() + "] " + "SESSION UNPAUSED"); // output the msg with a timestamp
+                eventWriter.Close();
+            }
+        }
+
+        public static void writeLine(string input)
+        {
+            StreamWriter eventWriter = new StreamWriter(Application.persistentDataPath + "/pediLogFile.txt", true); // append to existing file
+            eventWriter.WriteLine("[" + DateTime.Now.ToString() + "] " + input); // output the msg with a timestamp
             eventWriter.Close();
         }
     }
-
-    public void writeLine(string input)
-    {
-        eventWriter = new StreamWriter(Application.persistentDataPath + "/pediLogFile.txt", true); // append to existing file
-        DateTime dateCurrent = DateTime.Now;
-        eventWriter.WriteLine("["+dateCurrent.ToString() + "] " + input); // output the msg with a timestamp
-        eventWriter.Close();
-    }
-}

@@ -76,7 +76,8 @@ public class controlSlides : MonoBehaviour
             {
                 if(testStripRef.GetComponent<snappable>().isSnapped) // is glucose test strip in the monitor?
                 {
-                    logRef.writeLine("Put test strip in glucometer");
+                    //logRef.writeLine("Put test strip in glucometer");
+                    logData.writeLine("Put test strip in glucometer");
                     stripInMonitor = true;
                     enableNext();
                 }
@@ -371,7 +372,7 @@ public class controlSlides : MonoBehaviour
                     slideEvent(currSlide);
                 }
                 backSlide++;
-            logRef.writeLine("Moved to slide: " + currSlide);
+            logData.writeLine("Moved to slide: " + currSlide);
         }
     }
 
@@ -396,7 +397,7 @@ public class controlSlides : MonoBehaviour
             slides[backSlide].SetActive(false); // disable the current slide
             backSlide--; // decrement backSlide counter
             slides[backSlide].SetActive(true); // enable the previous slide
-            logRef.writeLine("Moved to slide: " + currSlide);
+            logData.writeLine("Moved to slide: " + currSlide);
         }
     }
 

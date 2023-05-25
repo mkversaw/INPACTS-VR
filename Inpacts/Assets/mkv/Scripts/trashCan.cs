@@ -58,8 +58,11 @@ public class trashCan : MonoBehaviour
     {
         if(other.gameObject == lancetRef)
         {
-            logRef.writeLine("Put lancet in trashcan");
-            teleportLancet();
+            if (!lancetRef.GetComponent<OVRGrabbable>().isGrabbed)
+            {
+                logData.writeLine("Put lancet in trashcan");
+                teleportLancet();
+            }
         }
 
         if (this.GetComponent<highlight2>().isHighlighted || wasHighlighted) // only delete if highlighted
@@ -71,7 +74,7 @@ public class trashCan : MonoBehaviour
 
                 if (hasGloves) // remove gloves
                 {
-                    logRef.writeLine("Removed gloves");
+                    logData.writeLine("Removed gloves");
                     leftHandRef.GetComponent<SkinnedMeshRenderer>().material.mainTexture = handTex;
                     rightHandRef.GetComponent<SkinnedMeshRenderer>().material.mainTexture = handTex;
                     handLeftFist.GetComponent<SkinnedMeshRenderer>().material.mainTexture = handTex;
@@ -87,7 +90,7 @@ public class trashCan : MonoBehaviour
             {
                 wasHighlighted = true;
                 gameObject.GetComponent<highlight2>().unhighlightObj(); // remove highlight
-                logRef.writeLine("Put blood test strip in trashcan");
+                logData.writeLine("Put blood test strip in trashcan");
                 //testStripRef.SetActive(false);
                 deleteGrabbed(testStripRef);
                 GameObject.FindGameObjectWithTag("Manager").GetComponent<controlSound>().Play("whoosh");
@@ -110,7 +113,7 @@ public class trashCan : MonoBehaviour
             {
                 wasHighlighted = true;
                 gameObject.GetComponent<highlight2>().unhighlightObj(); // remove highlight
-                logRef.writeLine("Put urine test strip in trashcan");
+                logData.writeLine("Put urine test strip in trashcan");
                 //urineStripRef.SetActive(false);
                 deleteGrabbed(urineStripRef);
                 GameObject.FindGameObjectWithTag("Manager").GetComponent<controlSound>().Play("whoosh");
@@ -119,7 +122,7 @@ public class trashCan : MonoBehaviour
                 TryMoveOn();
             } else if (other.gameObject == urineCupRef && round2 && !deletedUrineCup)
             {
-                logRef.writeLine("Put urine cup in trashcan");
+                logData.writeLine("Put urine cup in trashcan");
                 wasHighlighted = true;
                 gameObject.GetComponent<highlight2>().unhighlightObj(); // remove highlight
                 GameObject.FindGameObjectWithTag("Manager").GetComponent<controlSound>().Play("whoosh");

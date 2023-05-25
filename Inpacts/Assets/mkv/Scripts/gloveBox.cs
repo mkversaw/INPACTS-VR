@@ -38,7 +38,7 @@ public class gloveBox : MonoBehaviour
             handLeftFist.GetComponent<SkinnedMeshRenderer>().material.mainTexture = gloveTex;
             handRightFist.GetComponent<SkinnedMeshRenderer>().material.mainTexture = gloveTex;
 
-            logRef.writeLine("Put gloves on");
+            logData.writeLine("Put gloves on");
 
             highlighted = false;
             hasGloves = true;

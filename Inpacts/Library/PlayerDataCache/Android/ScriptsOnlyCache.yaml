@@ -54,6 +54,10 @@ ScriptsOnlyBuild:
     - OVRSceneSampleController
     - OVRScreenFade
     - UnityEngine.EventSystems.OVRInputModule
+    Unity.CollabProxy.Editor.dll:
+    - Unity.Cloud.Collaborate.UserInterface.CollaborateWindow
+    Unity.PlasticSCM.Editor.dll:
+    - Unity.PlasticSCM.Editor.PlasticWindow
     Unity.RenderPipelines.Core.Runtime.dll:
     - UnityEngine.Rendering.UI.DebugUIHandlerBitField
     - UnityEngine.Rendering.UI.DebugUIHandlerButton
@@ -3934,4 +3938,4 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/mkv/Scenes/PEDI Scenario.unity
-  playerPath: C:/Users/Miles/Desktop/platform-tools/inpactsBuild_1-17-22.apk
+  playerPath: C:/Users/Miles/Desktop/platform-tools/inpactsBuild_4-2-23.apk

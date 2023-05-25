@@ -74,7 +74,7 @@ public class squeezePoint : MonoBehaviour
         {
             bool whichHandGrabbed = GetComponent<OVRGrabbable>().grabbedBy.gameObject.CompareTag("Right Hand");
             StartCoroutine(enableSqueeze(whichHandGrabbed)); // true if right, false if left
-            logRef.writeLine("Patient finger squeezed");
+            logData.writeLine("Patient finger squeezed");
             wasGrabbed = true;
         }
 
